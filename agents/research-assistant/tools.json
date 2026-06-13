@@ -1,0 +1,32 @@
+{
+  "tools": [
+    {
+      "name": "web_search",
+      "description": "Busca na web e retorna resultados relevantes.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "A consulta de busca."
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "fetch_url",
+      "description": "Baixa uma página e extrai seu texto principal.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL absoluta da página a ser lida."
+          }
+        },
+        "required": ["url"]
+      }
+    }
+  ]
+}
