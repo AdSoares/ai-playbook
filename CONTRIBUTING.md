@@ -1,30 +1,29 @@
-# Guia de Contribuição
+# Contributing Guide
 
-Obrigado por considerar contribuir com o **AI Playbook**! Este repositório vive de artefatos práticos e bem documentados. Este guia explica como adicionar os seus.
+Thanks for considering a contribution to the **AI Playbook**! This repository lives on practical, well-documented artifacts. This guide explains how to add yours.
 
-## Princípios
+## Principles
 
-- **Autocontido**: cada artefato deve funcionar sozinho, com pré-requisitos claros.
-- **Testado**: compartilhe apenas o que você já usou de verdade.
-- **Documentado**: todo artefato tem um cabeçalho com propósito, entradas e saídas esperadas.
-- **Neutro de provedor quando possível**: indique se algo é específico de um modelo/runtime.
+- **Self-contained**: every artifact should work on its own, with clear prerequisites.
+- **Tested**: only share what you've actually used.
+- **Documented**: every artifact has a header stating purpose, inputs, and expected outputs.
+- **Provider-neutral when possible**: note whether something is specific to a model/runtime.
 
-## Idioma
+## Language
 
-- **Documentação** (README, guias): Português (BR).
-- **Código, nomes de arquivos e identificadores técnicos**: Inglês.
-- **Commits**: Inglês, seguindo [Conventional Commits](https://www.conventionalcommits.org/).
+- **Documentation, code, identifiers, and commits**: English (EN-US).
+- **Commits**: follow [Conventional Commits](https://www.conventionalcommits.org/).
 
-## Passo a passo
+## Step by step
 
-1. Faça um fork e crie uma branch: `feat/<categoria>-<nome-curto>`.
-2. Coloque o artefato na pasta correta (`prompts/`, `agents/`, `skills/`, `mcp/`, `evals/`, `examples/`).
-3. Siga o **template** da categoria (veja o `README.md` da pasta).
-4. Atualize o índice no `README.md` da pasta, se houver.
-5. Rode o lint local, se aplicável.
-6. Abra um Pull Request usando o template e descreva o caso de uso.
+1. Fork the repo and create a branch: `feat/<category>-<short-name>`.
+2. Place the artifact in the right folder (`prompts/`, `agents/`, `skills/`, `mcp/`, `evals/`, `examples/`).
+3. Follow the category **template** (see the folder's `README.md`).
+4. Update the index in the folder's `README.md`, if present.
+5. Run the linter locally, if applicable.
+6. Open a Pull Request using the template and describe the use case.
 
-## Formato dos commits
+## Commit format
 
 ```
 feat(prompts): add code-review system prompt
@@ -32,11 +31,11 @@ fix(agents): correct tool schema in researcher agent
 docs(mcp): clarify auth setup for filesystem server
 ```
 
-## Checklist do PR
+## PR checklist
 
-- [ ] O artefato está na pasta certa e segue o template da categoria.
-- [ ] Cabeçalho/README preenchido (propósito, pré-requisitos, exemplo de uso).
-- [ ] Sem segredos, tokens ou dados sensíveis.
-- [ ] Testei o artefato pelo menos uma vez.
+- [ ] The artifact is in the right folder and follows the category template.
+- [ ] Header/README filled in (purpose, prerequisites, usage example).
+- [ ] No secrets, tokens, or sensitive data.
+- [ ] I tested the artifact at least once.
 
-Dúvidas? Abra uma issue. 🚀
+Questions? Open an issue. 🚀

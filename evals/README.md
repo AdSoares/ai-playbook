@@ -1,32 +1,32 @@
 # Evals
 
-Suites de avaliação para medir a qualidade de prompts, agentes e skills. Sem evals, "melhorar o prompt" é achismo. Aqui ficam datasets, rubricas e scripts que tornam a qualidade mensurável e repetível.
+Evaluation suites to measure the quality of prompts, agents, and skills. Without evals, "improve the prompt" is guesswork. This is where datasets, rubrics, and scripts live that make quality measurable and repeatable.
 
-## Convenções
+## Conventions
 
-- Uma pasta por suite: `evals/<nome-da-suite>/`.
-- Cada suite contém:
-  - `dataset.jsonl` — casos de teste (uma entrada por linha).
-  - `rubric.md` — critérios de avaliação (graders).
-  - `README.md` — o que a suite mede e como rodar.
-- Resultados (`results/`, `*.out.json`) **não** são versionados (ver `.gitignore`).
+- One folder per suite: `evals/<suite-name>/`.
+- Each suite contains:
+  - `dataset.jsonl` — test cases (one entry per line).
+  - `rubric.md` — evaluation criteria (graders).
+  - `README.md` — what the suite measures and how to run it.
+- Results (`results/`, `*.out.json`) are **not** versioned (see `.gitignore`).
 
-## Formato do dataset (`dataset.jsonl`)
+## Dataset format (`dataset.jsonl`)
 
 ```json
 {"id": "001", "input": "...", "expected": "...", "tags": ["edge-case"]}
 ```
 
-## Tipos de grader
+## Grader types
 
-| Tipo | Quando usar |
+| Type | When to use |
 |---|---|
-| **Exact / regex** | Saída determinística (classificação, extração). |
-| **LLM-as-judge** | Saída aberta (qualidade de resumo, tom). |
-| **Programático** | Validável por código (JSON válido, schema, latência). |
+| **Exact / regex** | Deterministic output (classification, extraction). |
+| **LLM-as-judge** | Open-ended output (summary quality, tone). |
+| **Programmatic** | Code-verifiable (valid JSON, schema, latency). |
 
-## Índice
+## Index
 
-| Suite | Mede |
+| Suite | Measures |
 |---|---|
-| [`summarization/`](summarization/) | Qualidade e fidelidade de resumos |
+| [`summarization/`](summarization/) | Summary quality and faithfulness |

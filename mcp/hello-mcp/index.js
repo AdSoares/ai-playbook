@@ -1,15 +1,15 @@
-// hello-mcp — exemplo ilustrativo de um servidor MCP mínimo.
+// hello-mcp — an illustrative example of a minimal MCP server.
 //
-// Em produção, use o SDK oficial: @modelcontextprotocol/sdk
+// In production, use the official SDK: @modelcontextprotocol/sdk
 // import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 // import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 //
-// O esqueleto abaixo mostra a forma: declarar ferramentas e responder chamadas.
+// The skeleton below shows the shape: declare tools and answer calls.
 
 const TOOLS = [
   {
     name: "echo",
-    description: "Devolve o texto recebido.",
+    description: "Returns the received text.",
     inputSchema: {
       type: "object",
       properties: { text: { type: "string" } },
@@ -18,7 +18,7 @@ const TOOLS = [
   },
   {
     name: "current_time",
-    description: "Devolve o horário atual em ISO 8601.",
+    description: "Returns the current time in ISO 8601.",
     inputSchema: { type: "object", properties: {} },
   },
 ];
@@ -34,7 +34,7 @@ function handleToolCall(name, args) {
   }
 }
 
-// Pseudo-bootstrap (substituir pela inicialização real do SDK):
+// Pseudo-bootstrap (replace with the real SDK initialization):
 //
 // const server = new Server({ name: "hello-mcp", version: "0.1.0" });
 // server.setRequestHandler("tools/list", () => ({ tools: TOOLS }));

@@ -1,24 +1,24 @@
 # MCP — Model Context Protocol
 
-Servidores e configurações [MCP](https://modelcontextprotocol.io): a forma padronizada de expor ferramentas, recursos e prompts para clientes de LLM (Claude Desktop, Claude Code, IDEs, etc.).
+Servers and configurations for [MCP](https://modelcontextprotocol.io): the standardized way to expose tools, resources, and prompts to LLM clients (Claude Desktop, Claude Code, IDEs, etc.).
 
-## Convenções
+## Conventions
 
-- Uma pasta por servidor: `mcp/<nome-do-servidor>/`.
-- Cada servidor inclui um `README.md` (o que expõe), o código/config e um exemplo de configuração de cliente.
-- **Nunca** commitar segredos. Use variáveis de ambiente e um `.env.example`.
+- One folder per server: `mcp/<server-name>/`.
+- Each server includes a `README.md` (what it exposes), the code/config, and a sample client configuration.
+- **Never** commit secrets. Use environment variables and a `.env.example`.
 
-## O que um servidor MCP expõe
+## What an MCP server exposes
 
-| Primitivo | Descrição |
+| Primitive | Description |
 |---|---|
-| **Tools** | Funções que o modelo pode invocar (efeitos colaterais). |
-| **Resources** | Dados/arquivos que o cliente pode ler para contexto. |
-| **Prompts** | Templates de prompt parametrizados oferecidos pelo servidor. |
+| **Tools** | Functions the model can invoke (side effects). |
+| **Resources** | Data/files the client can read for context. |
+| **Prompts** | Parameterized prompt templates offered by the server. |
 
-## Configuração de cliente (exemplo)
+## Client configuration (example)
 
-Bloco típico para `claude_desktop_config.json` ou `.mcp.json`:
+A typical block for `claude_desktop_config.json` or `.mcp.json`:
 
 ```json
 {
@@ -34,8 +34,8 @@ Bloco típico para `claude_desktop_config.json` ou `.mcp.json`:
 }
 ```
 
-## Índice
+## Index
 
-| Servidor | Expõe | Descrição |
+| Server | Exposes | Description |
 |---|---|---|
-| [`hello-mcp/`](hello-mcp/) | tools | Servidor mínimo de exemplo (echo + horário) |
+| [`hello-mcp/`](hello-mcp/) | tools | Minimal example server (echo + current time) |

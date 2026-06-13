@@ -2,13 +2,13 @@
   "tools": [
     {
       "name": "web_search",
-      "description": "Busca na web e retorna resultados relevantes.",
+      "description": "Searches the web and returns relevant results.",
       "input_schema": {
         "type": "object",
         "properties": {
           "query": {
             "type": "string",
-            "description": "A consulta de busca."
+            "description": "The search query."
           }
         },
         "required": ["query"]
@@ -16,13 +16,13 @@
     },
     {
       "name": "fetch_url",
-      "description": "Baixa uma página e extrai seu texto principal.",
+      "description": "Downloads a page and extracts its main text.",
       "input_schema": {
         "type": "object",
         "properties": {
           "url": {
             "type": "string",
-            "description": "URL absoluta da página a ser lida."
+            "description": "Absolute URL of the page to read."
           }
         },
         "required": ["url"]

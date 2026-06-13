@@ -1,47 +1,47 @@
 # Agents
 
-Definições completas de agentes: papel, ferramentas, guardrails e o system prompt que os governa. Um agente é mais do que um prompt — inclui as ferramentas que ele pode usar e os limites do que pode fazer.
+Complete agent definitions: role, tools, guardrails, and the system prompt that governs them. An agent is more than a prompt — it includes the tools it can use and the limits on what it can do.
 
-## Convenções
+## Conventions
 
-- Uma pasta por agente: `agents/<nome-do-agente>/`.
-- Cada agente contém pelo menos um `AGENTS.md` (a especificação) e o `system-prompt.md`.
-- Esquemas de ferramentas em `tools.json` (formato JSON Schema), quando houver.
-- Declare explicitamente modelo alvo, ferramentas e guardrails.
+- One folder per agent: `agents/<agent-name>/`.
+- Each agent contains at least an `AGENTS.md` (the spec) and a `system-prompt.md`.
+- Tool schemas live in `tools.json` (JSON Schema format), when present.
+- Explicitly declare the target model, tools, and guardrails.
 
-## Estrutura de um agente
+## Agent structure
 
 ```
-agents/<nome>/
-├── AGENTS.md         ← especificação: papel, escopo, ferramentas, guardrails
-├── system-prompt.md  ← o prompt de sistema
-└── tools.json        ← (opcional) schemas das ferramentas
+agents/<name>/
+├── AGENTS.md         ← spec: role, scope, tools, guardrails
+├── system-prompt.md  ← the system prompt
+└── tools.json        ← (optional) tool schemas
 ```
 
-## Template do AGENTS.md
+## AGENTS.md template
 
 ```markdown
-# <Nome do Agente>
+# <Agent Name>
 
-## Papel
-O que este agente faz e para quem.
+## Role
+What this agent does and for whom.
 
-## Modelo alvo
+## Target model
 claude-opus-4-8 | gpt-* | agnostic
 
-## Ferramentas
-- `nome_da_ferramenta` — o que faz, entradas/saídas
+## Tools
+- `tool_name` — what it does, inputs/outputs
 
 ## Guardrails
-- O que o agente NUNCA deve fazer.
-- Quando deve escalar para um humano.
+- What the agent must NEVER do.
+- When it should escalate to a human.
 
-## Critérios de sucesso
-Como saber que o agente cumpriu a tarefa.
+## Success criteria
+How to know the agent completed the task.
 ```
 
-## Índice
+## Index
 
-| Agente | Descrição |
+| Agent | Description |
 |---|---|
-| [`research-assistant/`](research-assistant/) | Pesquisa um tópico e devolve um resumo com fontes |
+| [`research-assistant/`](research-assistant/) | Researches a topic and returns a summary with sources |

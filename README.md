@@ -1,55 +1,55 @@
 # AI Playbook
 
-> Coleção curada de artefatos para trabalhar com **LLMs e agentes**: prompts, agents, skills, servidores MCP e evals.
+> A curated collection of artifacts for working with **LLMs and agents**: prompts, agents, skills, MCP servers, and evals.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Markdown Lint](https://github.com/AdSoares/ai-playbook/actions/workflows/lint.yml/badge.svg)](https://github.com/AdSoares/ai-playbook/actions/workflows/lint.yml)
 
-Este repositório é um **playbook aberto**: artefatos reutilizáveis, testados na prática e prontos para copiar, adaptar e compartilhar. O objetivo é reduzir o tempo entre "tenho uma ideia para um agente" e "tenho algo funcionando".
+This repository is an **open playbook**: reusable, battle-tested artifacts ready to copy, adapt, and share. The goal is to shorten the gap between "I have an idea for an agent" and "I have something working."
 
 ---
 
-## 📂 Estrutura
+## 📂 Structure
 
 ```
 ai-playbook/
-├── prompts/        ← templates e bibliotecas de prompts
-├── agents/         ← definições de agentes (AGENTS.md, system prompts, configs)
-├── skills/         ← skills reutilizáveis (capacidades empacotadas)
-├── mcp/            ← servidores e configs Model Context Protocol
-├── evals/          ← suites de avaliação e benchmarks
-├── examples/       ← exemplos de código ponta a ponta
-└── docs/           ← guias e material de apoio
+├── prompts/        ← prompt templates and libraries
+├── agents/         ← agent definitions (AGENTS.md, system prompts, configs)
+├── skills/         ← reusable skills (packaged capabilities)
+├── mcp/            ← Model Context Protocol servers and configs
+├── evals/          ← evaluation suites and benchmarks
+├── examples/       ← end-to-end code examples
+└── docs/           ← guides and supporting material
 ```
 
-Cada pasta tem seu próprio `README.md` explicando convenções, formato dos artefatos e como contribuir.
+Each folder has its own `README.md` explaining its conventions, artifact format, and how to contribute.
 
-| Pasta | O que você encontra | Comece por |
+| Folder | What you'll find | Start here |
 |---|---|---|
-| [`prompts/`](prompts/) | Prompts de sistema, templates few-shot, padrões de instrução | [`prompts/README.md`](prompts/README.md) |
-| [`agents/`](agents/) | Agentes completos: papel, ferramentas, guardrails | [`agents/README.md`](agents/README.md) |
-| [`skills/`](skills/) | Capacidades empacotadas e portáveis entre agentes | [`skills/README.md`](skills/README.md) |
-| [`mcp/`](mcp/) | Servidores MCP e configurações de cliente | [`mcp/README.md`](mcp/README.md) |
-| [`evals/`](evals/) | Datasets, rubricas e scripts de avaliação | [`evals/README.md`](evals/README.md) |
-| [`examples/`](examples/) | Projetos de exemplo prontos para rodar | [`examples/README.md`](examples/README.md) |
+| [`prompts/`](prompts/) | System prompts, few-shot templates, instruction patterns | [`prompts/README.md`](prompts/README.md) |
+| [`agents/`](agents/) | Complete agents: role, tools, guardrails | [`agents/README.md`](agents/README.md) |
+| [`skills/`](skills/) | Packaged capabilities, portable across agents | [`skills/README.md`](skills/README.md) |
+| [`mcp/`](mcp/) | MCP servers and client configurations | [`mcp/README.md`](mcp/README.md) |
+| [`evals/`](evals/) | Datasets, rubrics, and evaluation scripts | [`evals/README.md`](evals/README.md) |
+| [`examples/`](examples/) | Runnable example projects | [`examples/README.md`](examples/README.md) |
 
 ---
 
-## 🚀 Como usar
+## 🚀 How to use
 
-1. Navegue pela pasta do tipo de artefato que você precisa.
-2. Cada artefato é autocontido — leia o cabeçalho/README para pré-requisitos.
-3. Copie, adapte ao seu contexto e dê os créditos quando fizer sentido.
+1. Browse the folder for the artifact type you need.
+2. Each artifact is self-contained — read its header/README for prerequisites.
+3. Copy, adapt to your context, and give credit where it makes sense.
 
-## 🤝 Contribuindo
+## 🤝 Contributing
 
-Contribuições são bem-vindas! Veja o [guia de contribuição](CONTRIBUTING.md) e o [código de conduta](CODE_OF_CONDUCT.md). Cada categoria define um template padrão — siga-o para manter a consistência.
+Contributions are welcome! See the [contribution guide](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT.md). Each category defines a standard template — follow it to keep things consistent.
 
-## 📜 Licença
+## 📜 License
 
-Distribuído sob a licença [MIT](LICENSE). Use, modifique e compartilhe livremente.
+Released under the [MIT](LICENSE) license. Use, modify, and share freely.
 
 ---
 
-_Mantido por [Ad Soares](https://github.com/AdSoares)._
+_Maintained by [Ad Soares](https://github.com/AdSoares)._

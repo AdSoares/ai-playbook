@@ -1,38 +1,38 @@
 # Skills
 
-Capacidades empacotadas e portáveis — blocos de competência que podem ser plugados em diferentes agentes ou runtimes. Uma skill descreve **quando** ser usada e **como** executar uma tarefa específica e repetível.
+Packaged, portable capabilities — competence blocks that can be plugged into different agents or runtimes. A skill describes **when** it should be used and **how** to perform a specific, repeatable task.
 
-## Convenções
+## Conventions
 
-- Uma pasta por skill: `skills/<nome-da-skill>/`.
-- Cada skill tem um `SKILL.md` com metadados de ativação e as instruções.
-- Recursos auxiliares (scripts, templates) ficam na mesma pasta.
+- One folder per skill: `skills/<skill-name>/`.
+- Each skill has a `SKILL.md` with activation metadata and instructions.
+- Helper resources (scripts, templates) live in the same folder.
 
-## Template do SKILL.md
+## SKILL.md template
 
 ```markdown
 ---
-name: nome-da-skill
-description: Quando usar esta skill (o gatilho de ativação).
+name: skill-name
+description: When to use this skill (the activation trigger).
 ---
 
-# <Nome da Skill>
+# <Skill Name>
 
-## Quando usar
-Sinais/gatilhos que indicam que esta skill se aplica.
+## When to use
+Signals/triggers indicating this skill applies.
 
-## Como executar
-Passo a passo que a skill realiza.
+## How it runs
+The step-by-step the skill performs.
 
-## Entradas / Saídas
-O que recebe, o que entrega.
+## Inputs / Outputs
+What it receives, what it delivers.
 
-## Exemplo
-Caso concreto de uso.
+## Example
+A concrete usage case.
 ```
 
-## Índice
+## Index
 
-| Skill | Quando usar |
+| Skill | When to use |
 |---|---|
-| [`changelog-writer/`](changelog-writer/) | Gerar entradas de CHANGELOG a partir de commits |
+| [`changelog-writer/`](changelog-writer/) | Generate CHANGELOG entries from commits |

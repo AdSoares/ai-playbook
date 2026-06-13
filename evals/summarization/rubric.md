@@ -1,35 +1,35 @@
 # Rubric — Summarization
 
-## Fidelidade (0-5) — LLM-as-judge
-Penalize qualquer afirmação no resumo que não seja sustentada pelo `input`.
+## Faithfulness (0-5) — LLM-as-judge
+Penalize any claim in the summary not supported by the `input`.
 
 ```text
-Você é um avaliador rigoroso. Compare o RESUMO com o TEXTO ORIGINAL.
-Atribua uma nota de 0 a 5 para FIDELIDADE:
-- 5: nenhuma afirmação não-sustentada (sem alucinação).
-- 3: detalhe menor não-sustentado.
-- 0: afirmação central inventada ou contradiz o original.
-Responda em JSON: {"score": n, "reason": "..."}.
+You are a strict evaluator. Compare the SUMMARY against the ORIGINAL TEXT.
+Assign a score from 0 to 5 for FAITHFULNESS:
+- 5: no unsupported claims (no hallucination).
+- 3: a minor unsupported detail.
+- 0: a central claim is fabricated or contradicts the original.
+Respond in JSON: {"score": n, "reason": "..."}.
 
-TEXTO ORIGINAL: {{input}}
-RESUMO: {{output}}
+ORIGINAL TEXT: {{input}}
+SUMMARY: {{output}}
 ```
 
-## Cobertura (0-5) — LLM-as-judge
-Quantos dos `expected_points` aparecem no resumo.
+## Coverage (0-5) — LLM-as-judge
+How many of the `expected_points` appear in the summary.
 
 ```text
-Dada a lista de PONTOS ESPERADOS e o RESUMO, atribua 0-5 para COBERTURA:
-- 5: todos os pontos presentes.
-- proporcional: subtraia conforme pontos faltantes.
-Responda em JSON: {"score": n, "missing": ["..."]}.
+Given the list of EXPECTED POINTS and the SUMMARY, assign 0-5 for COVERAGE:
+- 5: all points present.
+- proportional: subtract for each missing point.
+Respond in JSON: {"score": n, "missing": ["..."]}.
 
-PONTOS ESPERADOS: {{expected_points}}
-RESUMO: {{output}}
+EXPECTED POINTS: {{expected_points}}
+SUMMARY: {{output}}
 ```
 
-## Concisão — programático
-- PASS se o resumo tiver ≤ 80 tokens; FAIL caso contrário.
+## Conciseness — programmatic
+- PASS if the summary is ≤ 80 tokens; FAIL otherwise.
 
-## Agregação
-Nota final = média(Fidelidade, Cobertura) condicionada a Concisão = PASS.
+## Aggregation
+Final score = mean(Faithfulness, Coverage) conditioned on Conciseness = PASS.

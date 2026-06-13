@@ -1,43 +1,43 @@
 # Prompts
 
-Templates e bibliotecas de prompts reutilizáveis: system prompts, padrões few-shot, instruções de tarefa e técnicas de raciocínio.
+Reusable prompt templates and libraries: system prompts, few-shot patterns, task instructions, and reasoning techniques.
 
-## Convenções
+## Conventions
 
-- Um arquivo `.md` por prompt (ou pasta quando houver variações/few-shot externos).
-- Todo prompt começa com o cabeçalho de metadados abaixo.
-- Use placeholders explícitos no formato `{{variavel}}`.
-- Indique o modelo/runtime alvo se o prompt for específico.
+- One `.md` file per prompt (or a folder when there are variants / external few-shot files).
+- Every prompt starts with the metadata header below.
+- Use explicit placeholders in the form `{{variable}}`.
+- State the target model/runtime if the prompt is specific.
 
 ## Template
 
 ```markdown
 ---
-title: Nome do prompt
+title: Prompt name
 category: system | task | few-shot | reasoning
 model: agnostic | claude | gpt | gemini | ...
 tags: [code-review, summarization]
-author: seu-handle
+author: your-handle
 ---
 
-## Objetivo
-O que este prompt resolve, em uma frase.
+## Goal
+What this prompt solves, in one sentence.
 
-## Variáveis
-- `{{input}}` — descrição
-- `{{context}}` — descrição
+## Variables
+- `{{input}}` — description
+- `{{context}}` — description
 
 ## Prompt
 \`\`\`text
-<conteúdo do prompt>
+<prompt content>
 \`\`\`
 
-## Exemplo de uso
-Entrada → saída esperada.
+## Usage example
+Input → expected output.
 ```
 
-## Índice
+## Index
 
-| Prompt | Categoria | Descrição |
+| Prompt | Category | Description |
 |---|---|---|
-| [`code-review.md`](code-review.md) | system | Revisor de código focado em bugs e clareza |
+| [`code-review.md`](code-review.md) | system | Code reviewer focused on bugs and clarity |

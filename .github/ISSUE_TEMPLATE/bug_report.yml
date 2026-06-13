@@ -1,25 +1,25 @@
-name: "🐞 Problema em um artefato"
-description: Relatar que um artefato não funciona como descrito.
+name: "🐞 Issue with an artifact"
+description: Report that an artifact does not work as described.
 title: "[bug]: "
 labels: ["bug"]
 body:
   - type: input
     id: artifact
     attributes:
-      label: Artefato
-      description: Caminho do artefato (ex.: prompts/code-review.md)
+      label: Artifact
+      description: Path of the artifact (e.g., prompts/code-review.md)
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Comportamento esperado vs. observado
+      label: Expected vs. observed behavior
     validations:
       required: true
   - type: textarea
     id: context
     attributes:
-      label: Contexto
-      description: Modelo/runtime, versão, passos para reproduzir.
+      label: Context
+      description: Model/runtime, version, steps to reproduce.
     validations:
       required: false

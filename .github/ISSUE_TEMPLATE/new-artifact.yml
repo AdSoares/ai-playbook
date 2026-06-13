@@ -1,12 +1,12 @@
-name: "📦 Novo artefato"
-description: Sugerir um novo prompt, agent, skill, MCP server ou eval.
-title: "[artefato]: "
+name: "📦 New artifact"
+description: Suggest a new prompt, agent, skill, MCP server, or eval.
+title: "[artifact]: "
 labels: ["enhancement"]
 body:
   - type: dropdown
     id: category
     attributes:
-      label: Categoria
+      label: Category
       options:
         - Prompt
         - Agent
@@ -19,14 +19,14 @@ body:
   - type: textarea
     id: use-case
     attributes:
-      label: Caso de uso
-      description: Que problema este artefato resolve?
+      label: Use case
+      description: What problem does this artifact solve?
     validations:
       required: true
   - type: textarea
     id: details
     attributes:
-      label: Detalhes / esboço
-      description: Esboço do artefato, links ou referências.
+      label: Details / draft
+      description: Draft of the artifact, links, or references.
     validations:
       required: false

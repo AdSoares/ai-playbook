@@ -1,15 +1,15 @@
 # Eval — Summarization
 
-Mede a qualidade de resumos produzidos por um prompt/agente: fidelidade ao texto original, cobertura dos pontos principais e concisão.
+Measures the quality of summaries produced by a prompt/agent: faithfulness to the original text, coverage of key points, and conciseness.
 
-## Como rodar (conceitual)
-1. Para cada linha do `dataset.jsonl`, envie o `input` ao sistema sob teste.
-2. Avalie a saída com os graders descritos em `rubric.md`.
-3. Agregue as notas e compare entre versões do prompt.
+## How to run (conceptual)
+1. For each line in `dataset.jsonl`, send the `input` to the system under test.
+2. Score the output with the graders described in `rubric.md`.
+3. Aggregate the scores and compare across prompt versions.
 
 ## Graders
-- **Fidelidade** (LLM-as-judge): o resumo afirma algo que não está no original? (0-5)
-- **Cobertura** (LLM-as-judge): os pontos-chave foram incluídos? (0-5)
-- **Concisão** (programático): o resumo respeita o limite de tokens?
+- **Faithfulness** (LLM-as-judge): does the summary claim anything not in the original? (0-5)
+- **Coverage** (LLM-as-judge): were the key points included? (0-5)
+- **Conciseness** (programmatic): does the summary respect the token limit?
 
-Detalhes em [`rubric.md`](rubric.md).
+Details in [`rubric.md`](rubric.md).

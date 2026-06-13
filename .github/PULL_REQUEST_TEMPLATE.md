@@ -1,22 +1,22 @@
-# Descrição
+# Description
 
-<!-- O que este PR adiciona/altera e por quê. -->
+<!-- What this PR adds/changes and why. -->
 
-## Tipo de artefato
+## Artifact type
 - [ ] Prompt
 - [ ] Agent
 - [ ] Skill
 - [ ] MCP server
 - [ ] Eval
 - [ ] Example
-- [ ] Outro (docs, infra)
+- [ ] Other (docs, infra)
 
 ## Checklist
-- [ ] O artefato está na pasta certa e segue o template da categoria.
-- [ ] Cabeçalho/README preenchido (propósito, pré-requisitos, exemplo de uso).
-- [ ] Atualizei o índice no README da pasta (se houver).
-- [ ] Sem segredos, tokens ou dados sensíveis.
-- [ ] Testei o artefato pelo menos uma vez.
+- [ ] The artifact is in the right folder and follows the category template.
+- [ ] Header/README filled in (purpose, prerequisites, usage example).
+- [ ] Updated the folder's README index (if present).
+- [ ] No secrets, tokens, or sensitive data.
+- [ ] I tested the artifact at least once.
 
-## Caso de uso
-<!-- Em que cenário real este artefato ajuda? -->
+## Use case
+<!-- In what real scenario does this artifact help? -->

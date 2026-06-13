@@ -1,35 +1,35 @@
 ---
 name: changelog-writer
-description: Use ao transformar uma lista de commits (Conventional Commits) em uma entrada de CHANGELOG legível para humanos, agrupada por tipo.
+description: Use when turning a list of commits (Conventional Commits) into a human-readable CHANGELOG entry, grouped by type.
 ---
 
 # Changelog Writer
 
-## Quando usar
-- Quando há um intervalo de commits/PRs e é preciso publicar uma nota de release.
-- Quando os commits seguem Conventional Commits (`feat:`, `fix:`, `docs:`, ...).
+## When to use
+- When there is a range of commits/PRs and a release note needs to be published.
+- When commits follow Conventional Commits (`feat:`, `fix:`, `docs:`, ...).
 
-## Como executar
-1. Receba a lista de commits (mensagem + hash curto).
-2. Agrupe por tipo: Features, Fixes, Docs, Internas.
-3. Reescreva cada item em linguagem orientada ao usuário (o benefício, não o detalhe interno).
-4. Descarte ruído (merges, bumps triviais) a menos que sejam relevantes.
-5. Produza Markdown sob um cabeçalho de versão/data.
+## How it runs
+1. Receive the list of commits (message + short hash).
+2. Group by type: Features, Fixes, Docs, Internal.
+3. Rewrite each item in user-facing language (the benefit, not the internal detail).
+4. Drop noise (merges, trivial bumps) unless relevant.
+5. Produce Markdown under a version/date heading.
 
-## Entradas / Saídas
-- **Entrada**: lista de commits + número da versão + data.
-- **Saída**: bloco Markdown pronto para colar no `CHANGELOG.md`.
+## Inputs / Outputs
+- **Input**: list of commits + version number + date.
+- **Output**: a Markdown block ready to paste into `CHANGELOG.md`.
 
-## Exemplo
+## Example
 ```text
-Entrada:
+Input:
   feat(api): add pagination to /users
   fix(auth): handle expired token refresh
 
-Saída:
+Output:
   ## [1.4.0] - 2026-06-13
-  ### Adicionado
-  - Paginação no endpoint de usuários.
-  ### Corrigido
-  - Renovação de token expirado deixou de falhar silenciosamente.
+  ### Added
+  - Pagination on the users endpoint.
+  ### Fixed
+  - Expired token refresh no longer fails silently.
 ```

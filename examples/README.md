@@ -1,18 +1,18 @@
 # Examples
 
-Projetos de exemplo ponta a ponta que combinam os artefatos do playbook (prompts + agents + skills + MCP) em algo executável. Servem de referência de integração — como as peças se encaixam.
+End-to-end example projects that combine the playbook's artifacts (prompts + agents + skills + MCP) into something runnable. They serve as integration references — how the pieces fit together.
 
-## Convenções
+## Conventions
 
-- Uma pasta por exemplo: `examples/<nome>/`.
-- Cada exemplo tem um `README.md` com pré-requisitos, setup e como rodar.
-- Mantenha dependências mínimas e claras.
-- Use `.env.example` para qualquer configuração; nunca commite segredos.
+- One folder per example: `examples/<name>/`.
+- Each example has a `README.md` with prerequisites, setup, and how to run.
+- Keep dependencies minimal and clear.
+- Use `.env.example` for any configuration; never commit secrets.
 
-## Índice
+## Index
 
-| Exemplo | Stack | Descrição |
+| Example | Stack | Description |
 |---|---|---|
-| _(em breve)_ | — | Pipeline RAG mínimo, loop de agente com ferramentas, etc. |
+| _(coming soon)_ | — | Minimal RAG pipeline, agent loop with tools, etc. |
 
-> Quer contribuir com um exemplo? Veja o [guia de contribuição](../CONTRIBUTING.md).
+> Want to contribute an example? See the [contribution guide](../CONTRIBUTING.md).

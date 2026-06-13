@@ -1,8 +1,8 @@
 {
-  // Regras relaxadas para um repositório de artefatos/documentação.
+  // Relaxed rules for an artifacts/documentation repository.
   "default": true,
-  "MD013": false, // sem limite de comprimento de linha
-  "MD033": false, // permite HTML inline (badges, detalhes)
-  "MD041": false, // primeiro heading não precisa ser h1 em todos os arquivos
-  "MD024": { "siblings_only": true } // headings duplicados ok se em seções diferentes
+  "MD013": false, // no line-length limit
+  "MD033": false, // allow inline HTML (badges, details)
+  "MD041": false, // first heading need not be h1 in every file
+  "MD024": { "siblings_only": true } // duplicate headings ok across sections
 }

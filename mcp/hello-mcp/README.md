@@ -1,22 +1,22 @@
 # hello-mcp
 
-Servidor MCP mínimo, para servir de ponto de partida. Expõe duas ferramentas:
+A minimal MCP server to use as a starting point. It exposes two tools:
 
-- `echo(text)` — devolve o texto recebido.
-- `current_time()` — devolve o horário atual em ISO 8601.
+- `echo(text)` — returns the received text.
+- `current_time()` — returns the current time in ISO 8601.
 
-## Pré-requisitos
+## Prerequisites
 - Node.js 20+
 
-## Como rodar
+## How to run
 ```bash
 node index.js
 ```
 
-O servidor fala MCP por **stdio**, então normalmente é iniciado pelo cliente (não diretamente).
+The server speaks MCP over **stdio**, so it is normally started by the client (not directly).
 
-## Configuração de cliente
-Adicione ao seu `.mcp.json` / `claude_desktop_config.json`:
+## Client configuration
+Add this to your `.mcp.json` / `claude_desktop_config.json`:
 
 ```json
 {
@@ -29,6 +29,6 @@ Adicione ao seu `.mcp.json` / `claude_desktop_config.json`:
 }
 ```
 
-## Notas
-Este exemplo usa pseudocódigo no `index.js` para ilustrar a forma de um servidor.
-Para uma implementação real, use o [SDK oficial do MCP](https://github.com/modelcontextprotocol).
+## Notes
+This example uses pseudocode in `index.js` to illustrate the shape of a server.
+For a real implementation, use the [official MCP SDK](https://github.com/modelcontextprotocol).

@@ -1,36 +1,36 @@
 # Getting Started
 
-Este guia ajuda você a navegar e aproveitar o **AI Playbook**.
+This guide helps you navigate and get the most out of the **AI Playbook**.
 
-## O que é
+## What it is
 
-Uma coleção curada de artefatos práticos para construir com LLMs e agentes. Tudo aqui foi pensado para ser **copiado e adaptado**, não consumido como framework.
+A curated collection of practical artifacts for building with LLMs and agents. Everything here is meant to be **copied and adapted**, not consumed as a framework.
 
-## Mapa rápido
+## Quick map
 
-| Você quer... | Vá para |
+| You want to... | Go to |
 |---|---|
-| Um prompt pronto para uma tarefa | [`prompts/`](../prompts/) |
-| Um agente completo (papel + ferramentas) | [`agents/`](../agents/) |
-| Uma capacidade reutilizável | [`skills/`](../skills/) |
-| Expor ferramentas a um cliente LLM | [`mcp/`](../mcp/) |
-| Medir a qualidade do seu sistema | [`evals/`](../evals/) |
-| Ver tudo junto funcionando | [`examples/`](../examples/) |
+| A ready-made prompt for a task | [`prompts/`](../prompts/) |
+| A complete agent (role + tools) | [`agents/`](../agents/) |
+| A reusable capability | [`skills/`](../skills/) |
+| Expose tools to an LLM client | [`mcp/`](../mcp/) |
+| Measure the quality of your system | [`evals/`](../evals/) |
+| See everything working together | [`examples/`](../examples/) |
 
-## Como adaptar um artefato
+## How to adapt an artifact
 
-1. Copie a pasta/arquivo para o seu projeto.
-2. Substitua os placeholders `{{variavel}}`.
-3. Ajuste guardrails e modelo alvo ao seu contexto.
-4. **Crie uma eval** antes de iterar — meça antes de "melhorar".
+1. Copy the folder/file into your project.
+2. Replace the `{{variable}}` placeholders.
+3. Adjust guardrails and target model to your context.
+4. **Create an eval** before iterating — measure before you "improve".
 
-## Boas práticas
+## Best practices
 
-- **Versione seus prompts** como código: pequenas mudanças têm grandes efeitos.
-- **Comece com evals**: sem medição, otimização é achismo.
-- **Princípio do menor privilégio** para ferramentas de agentes.
-- **Nunca commite segredos** — use variáveis de ambiente.
+- **Version your prompts** like code: small changes have big effects.
+- **Start with evals**: without measurement, optimization is guesswork.
+- **Least privilege** for agent tools.
+- **Never commit secrets** — use environment variables.
 
-## Contribuindo
+## Contributing
 
-Veja [CONTRIBUTING.md](../CONTRIBUTING.md). Toda categoria tem um template — siga-o.
+See [CONTRIBUTING.md](../CONTRIBUTING.md). Every category has a template — follow it.

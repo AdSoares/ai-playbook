@@ -1,27 +1,27 @@
-# Código de Conduta
+# Code of Conduct
 
-## Nosso compromisso
+## Our pledge
 
-No interesse de promover um ambiente aberto e acolhedor, nós, como contribuidores e mantenedores, nos comprometemos a tornar a participação neste projeto uma experiência livre de assédio para todos, independentemente de idade, deficiência, etnia, identidade e expressão de gênero, nível de experiência, nacionalidade, aparência, raça, religião ou orientação sexual.
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in this project a harassment-free experience for everyone, regardless of age, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual orientation.
 
-## Nossos padrões
+## Our standards
 
-Exemplos de comportamento que contribuem para um ambiente positivo:
+Examples of behavior that contributes to a positive environment:
 
-- Usar linguagem acolhedora e inclusiva.
-- Respeitar pontos de vista e experiências diferentes.
-- Aceitar críticas construtivas com elegância.
-- Focar no que é melhor para a comunidade.
+- Using welcoming and inclusive language.
+- Respecting differing viewpoints and experiences.
+- Gracefully accepting constructive criticism.
+- Focusing on what is best for the community.
 
-Exemplos de comportamento inaceitável:
+Examples of unacceptable behavior:
 
-- Uso de linguagem ou imagens sexualizadas.
-- Comentários ofensivos, insultos ou ataques pessoais e políticos.
-- Assédio público ou privado.
-- Publicar informações privadas de terceiros sem permissão.
+- The use of sexualized language or imagery.
+- Trolling, insulting comments, and personal or political attacks.
+- Public or private harassment.
+- Publishing others' private information without permission.
 
-## Aplicação
+## Enforcement
 
-Casos de comportamento abusivo, de assédio ou de outra forma inaceitável podem ser reportados ao mantenedor em **adnilson.soares@gmail.com**. Todas as reclamações serão analisadas e investigadas.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the maintainer at **adnilson.soares@gmail.com**. All complaints will be reviewed and investigated.
 
-Este Código de Conduta é adaptado do [Contributor Covenant](https://www.contributor-covenant.org), versão 2.1.
+This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.
