@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 3 — Hands-on examples — Docker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="../index.html">teach-me</a>
+    <span class="crumb">Docker · Lesson 3</span>
+  </header>
+  <main>
+    <h1>Lesson 3 — Run, build, ports &amp; volumes (hands-on)</h1>
+    <p class="meta">Estimated time: 1h00 · Bloom focus: Apply</p>
+    <p class="note">Requires Docker installed (Docker Desktop or Engine). If you can't install now,
+    read along — every command has its expected effect described.</p>
+
+    <h2>1. What you'll learn</h2>
+    <p>The everyday commands: run a container, see what's running, publish a port, persist data.</p>
+
+    <h2>2. Why it matters</h2>
+    <p>This is 80% of daily Docker use. Internalize these six commands and you're productive.</p>
+
+    <h2>3. Simple explanation — the core commands</h2>
+    <div class="card" style="font-family:monospace;white-space:pre-wrap">docker run hello-world         # pull + run a tiny test image
+docker run -d -p 8080:80 nginx # run nginx in background, map host 8080 -> container 80
+docker ps                      # list running containers
+docker stop &lt;id&gt;               # stop one
+docker rm &lt;id&gt;                  # remove it
+docker images                  # list local images</div>
+    <p>After the nginx command, open <code>http://localhost:8080</code> — you'll see the nginx page.</p>
+
+    <h2>4. Concrete example — ports</h2>
+    <p><code>-p 8080:80</code> means "send traffic arriving on my machine's port 8080 to the
+    container's port 80". The number before the colon is <em>host</em>; after is <em>container</em>.
+    Forget <code>-p</code> and the service runs but you can't reach it from your browser.</p>
+
+    <h2>5. Correct technical view — volumes &amp; ephemerality</h2>
+    <p>A container's writable layer dies with the container. To keep data, mount a
+    <strong>volume</strong>:</p>
+    <div class="card" style="font-family:monospace;white-space:pre-wrap">docker run -d -p 5432:5432 \
+  -e POSTGRES_PASSWORD=secret \
+  -v pgdata:/var/lib/postgresql/data \
+  postgres:16</div>
+    <p>The <code>-v pgdata:/var/lib/postgresql/data</code> stores the database files in a named volume
+    <code>pgdata</code> that survives <code>docker rm</code>. <code>-e</code> sets an environment
+    variable inside the container.</p>
+
+    <h2>6. Common mistakes</h2>
+    <ul>
+      <li>Swapping the port order (<code>-p 80:8080</code>) and then "the site won't load".</li>
+      <li>Storing important data in the container with no volume, then losing it on <code>rm</code>.</li>
+    </ul>
+
+    <h2>7. Practical case</h2>
+    <p>You need Postgres for a local project. Instead of installing it, you run the command above.
+    Delete the container when done; the data stays in <code>pgdata</code> for next time.</p>
+
+    <h2>8. Recall questions</h2>
+    <div class="quiz">
+      <div class="q">
+        <p>In <code>-p 3000:80</code>, which port do you open in the browser?</p>
+        <span class="opt" data-correct="true">localhost:3000 (the host port, before the colon).</span>
+        <span class="opt" data-correct="false">localhost:80 (the container port, after the colon).</span>
+      </div>
+      <div class="q">
+        <p>Why might data "disappear" after you remove a container?</p>
+        <span class="opt" data-correct="true">The writable layer is discarded on removal unless a volume was mounted.</span>
+        <span class="opt" data-correct="false">Docker compresses old containers automatically.</span>
+      </div>
+      <div class="q">
+        <p>What does <code>-d</code> do in <code>docker run -d ...</code>?</p>
+        <span class="opt" data-correct="true">Runs the container detached (in the background).</span>
+        <span class="opt" data-correct="false">Deletes the container after it starts.</span>
+      </div>
+    </div>
+
+    <h2>9. Mini-exercise</h2>
+    <div class="card">Run nginx on host port 9000, confirm it in the browser, then stop and remove it.
+    Write down the three commands you used.</div>
+
+    <h2>10. Summary</h2>
+    <p><code>run</code> starts a container; <code>-d</code> detaches it; <code>-p host:container</code>
+    publishes a port; <code>-v name:/path</code> persists data in a volume; <code>-e</code> sets env
+    vars. <code>ps</code>, <code>stop</code>, <code>rm</code>, <code>images</code> manage the rest.
+    Container filesystems are ephemeral — use volumes for anything you want to keep.</p>
+
+    <h2>11. Terms for the glossary</h2>
+    <p>volume, port mapping, detached mode, environment variable, ephemeral filesystem.</p>
+
+    <h2>12. Sources &amp; deepening</h2>
+    <p>See <a href="../references/sources.html">sources</a> (Docker "Get started", volumes docs).</p>
+
+    <p style="margin-top:2rem"><button data-complete="lessons/lesson-03-examples.html">Mark this lesson complete</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>

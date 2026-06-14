@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 4 — Common mistakes — Docker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="../index.html">teach-me</a>
+    <span class="crumb">Docker · Lesson 4</span>
+  </header>
+  <main>
+    <h1>Lesson 4 — Common beginner mistakes</h1>
+    <p class="meta">Estimated time: 40 min · Bloom focus: Analyze</p>
+
+    <h2>1. What you'll learn</h2>
+    <p>The handful of mistakes that trip up almost every beginner — and how to spot them early.</p>
+
+    <h2>2. Why it matters</h2>
+    <p>Knowing the failure modes is half of competence. Each mistake below has cost someone hours.</p>
+
+    <h2>3. Simple explanation — the top five</h2>
+    <ol>
+      <li><strong>Relying on <code>latest</code>.</strong> It's the default tag, not "newest stable".
+      Builds become non-reproducible. → Pin versions: <code>python:3.11-slim</code>.</li>
+      <li><strong>Losing data.</strong> No volume → data gone on <code>rm</code>. → Mount a volume for
+      anything you care about.</li>
+      <li><strong>Forgetting <code>-p</code>.</strong> The service runs but is unreachable from the
+      browser. → Publish the port.</li>
+      <li><strong>Huge images.</strong> Using a full OS base and copying everything (including
+      <code>node_modules</code>, <code>.git</code>). → Use slim bases and a <code>.dockerignore</code>.</li>
+      <li><strong>Putting secrets in the image.</strong> Baking passwords into a Dockerfile leaks them
+      to anyone with the image. → Pass via <code>-e</code> / secrets at runtime.</li>
+    </ol>
+
+    <h2>4. Concrete example</h2>
+    <p>A 1.2 GB image built <code>FROM ubuntu</code> with everything copied in. Switching to
+    <code>python:3.11-slim</code> + a <code>.dockerignore</code> dropped it to ~120 MB and builds got
+    faster thanks to layer caching.</p>
+
+    <h2>5. Correct technical view</h2>
+    <p>Order Dockerfile instructions from least- to most-frequently-changing so the layer cache stays
+    valid: copy <code>requirements.txt</code> and install deps <em>before</em> copying source. Then
+    editing source doesn't bust the dependency layer.</p>
+
+    <h2>6. Common mistakes (meta)</h2>
+    <ul>
+      <li>Debugging blind. Use <code>docker logs &lt;id&gt;</code> and <code>docker exec -it &lt;id&gt; sh</code>
+      to look inside a running container.</li>
+      <li>Running everything as root inside the container without thinking about it.</li>
+    </ul>
+
+    <h2>7. Practical case</h2>
+    <p>"My API container exits immediately." <code>docker logs</code> shows it crashed on a missing env
+    var — fixed with <code>-e</code>. Without reading logs, this looks like "Docker is broken".</p>
+
+    <h2>8. Recall questions</h2>
+    <div class="quiz">
+      <div class="q">
+        <p>Why is pinning an image tag better than using <code>latest</code>?</p>
+        <span class="opt" data-correct="true">It makes builds reproducible; <code>latest</code> can change under you.</span>
+        <span class="opt" data-correct="false">latest is slower to download.</span>
+      </div>
+      <div class="q">
+        <p>Where should secrets like passwords go?</p>
+        <span class="opt" data-correct="true">Provided at runtime (env vars / secrets), never baked into the image.</span>
+        <span class="opt" data-correct="false">Hard-coded in the Dockerfile for convenience.</span>
+      </div>
+      <div class="q">
+        <p>What command lets you inspect why a container crashed?</p>
+        <span class="opt" data-correct="true"><code>docker logs &lt;id&gt;</code></span>
+        <span class="opt" data-correct="false"><code>docker images</code></span>
+      </div>
+    </div>
+
+    <h2>9. Mini-exercise</h2>
+    <div class="card">Take the Dockerfile from Lesson 2 and list two changes that would (a) shrink the
+    image and (b) improve layer-cache reuse.</div>
+
+    <h2>10. Summary</h2>
+    <p>The classic five: <code>latest</code> reliance, data loss without volumes, missing
+    <code>-p</code>, bloated images, and baked-in secrets. Order Dockerfile steps to preserve the
+    cache. When something breaks, read <code>docker logs</code> and <code>exec</code> into the
+    container instead of guessing.</p>
+
+    <h2>11. Terms for the glossary</h2>
+    <p>.dockerignore, layer cache, slim image, docker logs, docker exec.</p>
+
+    <h2>12. Sources &amp; deepening</h2>
+    <p>See <a href="../references/sources.html">sources</a> (Dockerfile best practices).</p>
+
+    <p style="margin-top:2rem"><button data-complete="lessons/lesson-04-common-mistakes.html">Mark this lesson complete</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>

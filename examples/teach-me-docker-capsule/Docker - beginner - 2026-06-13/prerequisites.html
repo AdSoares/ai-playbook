@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prerequisites — Docker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="index.html">teach-me</a>
+    <span class="crumb">Docker · Prerequisites</span>
+  </header>
+  <main>
+    <h1>Prerequisites</h1>
+    <p class="meta">Classified Required / Recommended / Useful. Light gaps get a quick review below.</p>
+
+    <table>
+      <thead><tr><th>Prerequisite</th><th>Classification</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Basic command line (cd, ls, run a command)</td><td><span class="badge">Required</span></td><td>Every Docker interaction is a CLI command.</td></tr>
+        <tr><td>Idea of a "process" and a "file system"</td><td><span class="badge">Required</span></td><td>A container is essentially an isolated process + filesystem.</td></tr>
+        <tr><td>Rough idea of TCP ports (e.g. web on 80/8080)</td><td><span class="badge">Recommended</span></td><td>Needed to publish a container's port to your machine.</td></tr>
+        <tr><td>Having built/run any small app (web, script)</td><td><span class="badge">Useful</span></td><td>Makes the case study more concrete.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5-minute quick review (if you had light gaps)</h2>
+    <div class="card">
+      <p><strong>Process:</strong> a running program. The same program file can run as many processes.</p>
+      <p><strong>Filesystem:</strong> the tree of files a program sees. Two programs can see different trees.</p>
+      <p><strong>Port:</strong> a numbered "door" on a machine where a network service listens. A web
+      server might listen on port 80; you reach it at <code>http://localhost:80</code>.</p>
+      <p><strong>Package vs. running program:</strong> an installer/image is a frozen artifact on disk;
+      the running program is what exists in memory after you start it. Hold this distinction — it is
+      exactly the <em>image vs. container</em> idea you'll meet in Lesson 2.</p>
+    </div>
+
+    <p style="margin-top:2rem"><button data-complete="prerequisites.html">Mark this section complete</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

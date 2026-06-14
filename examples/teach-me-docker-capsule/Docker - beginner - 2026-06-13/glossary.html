@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glossary — Docker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="index.html">teach-me</a>
+    <span class="crumb">Docker · Glossary</span>
+  </header>
+  <main>
+    <h1>Glossary</h1>
+    <table>
+      <thead><tr><th>Term</th><th>Short</th><th>Technical</th><th>Example</th><th>Appears</th><th>Level</th></tr></thead>
+      <tbody>
+        <tr><td>Image</td><td>Frozen app template</td><td>Read-only stack of layers built from a Dockerfile</td><td><code>nginx:1.27</code></td><td>L2</td><td>beginner</td></tr>
+        <tr><td>Container</td><td>A running image</td><td>Isolated process + thin writable layer over an image</td><td><code>docker run nginx</code></td><td>L1–L2</td><td>beginner</td></tr>
+        <tr><td>Registry</td><td>Image store</td><td>Service to pull/push images</td><td>Docker Hub</td><td>L2</td><td>beginner</td></tr>
+        <tr><td>Dockerfile</td><td>Build recipe</td><td>Text file of build instructions, one layer each</td><td><code>FROM python:3.11-slim</code></td><td>L2</td><td>beginner</td></tr>
+        <tr><td>Layer</td><td>A build step's output</td><td>Cached, content-addressed filesystem diff</td><td><code>COPY app.py .</code></td><td>L2,L4</td><td>beginner</td></tr>
+        <tr><td>Tag</td><td>Image version label</td><td>Mutable pointer; defaults to <code>latest</code></td><td><code>:3.11-slim</code></td><td>L2,L4</td><td>beginner</td></tr>
+        <tr><td>Volume</td><td>Persistent storage</td><td>Storage outside the writable layer, survives <code>rm</code></td><td><code>-v pgdata:/var/lib/...</code></td><td>L3</td><td>beginner</td></tr>
+        <tr><td>Port mapping</td><td>Expose a service</td><td><code>-p host:container</code> forwards host port to container</td><td><code>-p 8080:80</code></td><td>L3</td><td>beginner</td></tr>
+        <tr><td>Detached mode</td><td>Run in background</td><td><code>-d</code> flag; container runs without holding the terminal</td><td><code>docker run -d</code></td><td>L3</td><td>beginner</td></tr>
+        <tr><td>Ephemeral filesystem</td><td>Throwaway data</td><td>Writable layer discarded on container removal</td><td>lost DB without volume</td><td>L2–L3</td><td>beginner</td></tr>
+        <tr><td>Build context</td><td>Folder sent to build</td><td>The <code>.</code> path whose contents Docker can COPY</td><td><code>docker build -t x .</code></td><td>L5</td><td>beginner</td></tr>
+        <tr><td>EXPOSE</td><td>Documents a port</td><td>Metadata only; does not publish (need <code>-p</code>)</td><td><code>EXPOSE 80</code></td><td>L5</td><td>beginner</td></tr>
+      </tbody>
+    </table>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

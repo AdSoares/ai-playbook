@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercises — Docker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="../index.html">teach-me</a>
+    <span class="crumb">Docker · Exercises</span>
+  </header>
+  <main>
+    <h1>Exercises</h1>
+    <p class="meta">Closed-book where possible. Try before peeking at the hint.</p>
+
+    <h2>Hands-on</h2>
+    <ol>
+      <li>Run <code>hello-world</code>. What does the output confirm about your install?</li>
+      <li>Run nginx detached on host port <strong>8081</strong>, open it, then stop and remove it.</li>
+      <li>Run Postgres 16 with a named volume. Stop and remove the container, run it again with the
+      same volume — your data (if you'd created any) is still there. Why?</li>
+      <li>Build the Lesson 5 app as <code>hello-web</code>, then rebuild as <code>hello-web:v2</code>
+      with different text and run both at once on ports 8080 and 9090.</li>
+    </ol>
+
+    <h2>Conceptual</h2>
+    <ol>
+      <li>Explain image vs. container to someone using an analogy that is NOT "class/object".</li>
+      <li>Reorder this Dockerfile to maximize cache reuse and say why:
+      <code>COPY . .</code> then <code>RUN pip install -r requirements.txt</code>.</li>
+      <li>A teammate says "EXPOSE 80 should make my site load but it doesn't." Diagnose it.</li>
+    </ol>
+
+    <div class="note"><strong>Hints.</strong> #3: volumes live outside the container's writable layer.
+    #6: copy <code>requirements.txt</code> and install before <code>COPY . .</code>. #7: EXPOSE
+    documents, <code>-p</code> publishes.</div>
+
+    <p style="margin-top:2rem"><button data-complete="activities/exercises.html">Mark this section complete</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>

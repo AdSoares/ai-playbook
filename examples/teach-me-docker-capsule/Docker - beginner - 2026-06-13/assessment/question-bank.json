@@ -1,0 +1,129 @@
+[
+  {
+    "question_id": "docker-beginner-q-001",
+    "topic": "image-vs-container",
+    "level": "beginner",
+    "bloom": "understand",
+    "difficulty": 2,
+    "is_fundamental": true,
+    "format": "multiple_choice",
+    "question": "What best describes the image-container relationship?",
+    "options": [
+      "Image = immutable template; container = running instance created from it.",
+      "Container = the file on disk; image = the process in memory.",
+      "They are identical and interchangeable."
+    ],
+    "answer_key": "An image is an immutable template; a container is a running instance created from it.",
+    "asked_count": 1,
+    "last_asked_at": "2026-06-13",
+    "last_result": "correct"
+  },
+  {
+    "question_id": "docker-beginner-q-002",
+    "topic": "ports",
+    "level": "beginner",
+    "bloom": "apply",
+    "difficulty": 2,
+    "is_fundamental": true,
+    "format": "multiple_choice",
+    "question": "In `docker run -p 8080:80 nginx`, which URL do you open?",
+    "options": ["http://localhost:8080", "http://localhost:80", "http://nginx:8080"],
+    "answer_key": "http://localhost:8080 (the host port, before the colon).",
+    "asked_count": 1,
+    "last_asked_at": "2026-06-13",
+    "last_result": "correct"
+  },
+  {
+    "question_id": "docker-beginner-q-003",
+    "topic": "volumes",
+    "level": "beginner",
+    "bloom": "understand",
+    "difficulty": 3,
+    "is_fundamental": true,
+    "format": "true_false_justified",
+    "question": "Why can container data disappear after `docker rm`?",
+    "answer_key": "The writable layer is discarded on removal unless a volume was mounted.",
+    "asked_count": 1,
+    "last_asked_at": "2026-06-13",
+    "last_result": "correct"
+  },
+  {
+    "question_id": "docker-beginner-q-004",
+    "topic": "tags",
+    "level": "beginner",
+    "bloom": "evaluate",
+    "difficulty": 2,
+    "is_fundamental": false,
+    "format": "multiple_choice",
+    "question": "Why prefer `python:3.11-slim` over `:latest`?",
+    "options": [
+      "Pinned tags make builds reproducible; latest can change.",
+      "slim images run with admin rights automatically.",
+      "latest cannot be used in a Dockerfile."
+    ],
+    "answer_key": "Pinned tags make builds reproducible; latest is just the default tag and can move.",
+    "asked_count": 1,
+    "last_asked_at": "2026-06-13",
+    "last_result": "correct"
+  },
+  {
+    "question_id": "docker-beginner-q-005",
+    "topic": "bind-address",
+    "level": "beginner",
+    "bloom": "analyze",
+    "difficulty": 3,
+    "is_fundamental": false,
+    "format": "multiple_choice",
+    "question": "Inside a container, a web server should bind to which address, and why?",
+    "options": [
+      "0.0.0.0 - so forwarded host traffic is accepted.",
+      "127.0.0.1 - for better performance."
+    ],
+    "answer_key": "0.0.0.0, so connections forwarded from the host are accepted (127.0.0.1 only accepts from inside the container).",
+    "asked_count": 1,
+    "last_asked_at": "2026-06-13",
+    "last_result": "partial"
+  },
+  {
+    "question_id": "docker-beginner-q-006",
+    "topic": "layer-cache",
+    "level": "beginner",
+    "bloom": "analyze",
+    "difficulty": 3,
+    "is_fundamental": false,
+    "format": "error_diagnosis",
+    "question": "Reorder a Dockerfile that does `COPY . .` before `RUN pip install -r requirements.txt` to maximize cache reuse, and explain why.",
+    "answer_key": "Copy requirements.txt and run the install before `COPY . .`, so editing source code does not invalidate the dependency layer.",
+    "asked_count": 1,
+    "last_asked_at": "2026-06-13",
+    "last_result": "incorrect"
+  },
+  {
+    "question_id": "docker-beginner-q-007",
+    "topic": "concept",
+    "level": "beginner",
+    "bloom": "understand",
+    "difficulty": 1,
+    "is_fundamental": true,
+    "format": "plain_explanation",
+    "question": "Explain to a non-technical person why a container 'works the same everywhere'.",
+    "answer_key": "Because the container packages the app together with its full environment, so it doesn't depend on what's installed on the host.",
+    "asked_count": 1,
+    "last_asked_at": "2026-06-13",
+    "last_result": "correct"
+  },
+  {
+    "question_id": "docker-beginner-q-008",
+    "topic": "build",
+    "level": "beginner",
+    "bloom": "apply",
+    "difficulty": 2,
+    "is_fundamental": true,
+    "format": "short_answer",
+    "question": "Give the command to build an image named hello-web from the current folder.",
+    "answer_key": "docker build -t hello-web .",
+    "asked_count": 0,
+    "last_asked_at": null,
+    "last_result": null
+  }
+]

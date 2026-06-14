@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flashcards — Docker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="../index.html">teach-me</a>
+    <span class="crumb">Docker · Flashcards</span>
+  </header>
+  <main>
+    <h1>Flashcards</h1>
+    <p class="meta">Click a card to flip. Recall the answer before flipping.</p>
+
+    <div class="flashcards">
+      <div class="flashcard"><div class="inner">
+        <div class="face front">Image vs. container?</div>
+        <div class="face back">Image = immutable template; container = running instance of it.</div>
+      </div></div>
+      <div class="flashcard"><div class="inner">
+        <div class="face front">What is a registry?</div>
+        <div class="face back">A store of images to pull/push (e.g. Docker Hub).</div>
+      </div></div>
+      <div class="flashcard"><div class="inner">
+        <div class="face front">-p 8080:80 means?</div>
+        <div class="face back">Host port 8080 → container port 80.</div>
+      </div></div>
+      <div class="flashcard"><div class="inner">
+        <div class="face front">Persist container data?</div>
+        <div class="face back">Mount a volume: -v name:/path.</div>
+      </div></div>
+      <div class="flashcard"><div class="inner">
+        <div class="face front">Risk of :latest?</div>
+        <div class="face back">It's just the default tag, not "newest stable" → pin a version.</div>
+      </div></div>
+      <div class="flashcard"><div class="inner">
+        <div class="face front">Build an image?</div>
+        <div class="face back">docker build -t name . (from a Dockerfile).</div>
+      </div></div>
+      <div class="flashcard"><div class="inner">
+        <div class="face front">Why are containers light?</div>
+        <div class="face back">They share the host kernel; no full guest OS like a VM.</div>
+      </div></div>
+      <div class="flashcard"><div class="inner">
+        <div class="face front">Bind address inside a container?</div>
+        <div class="face back">0.0.0.0 (so the host can reach it), not 127.0.0.1.</div>
+      </div></div>
+    </div>
+
+    <p style="margin-top:2rem"><button data-complete="activities/flashcards.html">Mark flashcards done</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>

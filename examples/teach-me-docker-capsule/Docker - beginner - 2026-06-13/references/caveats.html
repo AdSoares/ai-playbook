@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caveats — Docker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="../index.html">teach-me</a>
+    <span class="crumb">Docker · Caveats</span>
+  </header>
+  <main>
+    <h1>Caveats</h1>
+
+    <h2>Scope &amp; expectations</h2>
+    <p>This is a <strong>structured introduction</strong>, not professional mastery. It makes you
+    productive with Docker locally; it does not make you a production/ops practitioner
+    (see the <a href="../ignorance-map.html">ignorance map</a>).</p>
+
+    <h2>Things that change over time</h2>
+    <ul>
+      <li>The Docker CLI evolves. Commands here are stable, but flags and defaults can shift — always
+      cross-check the official docs (dated 2026-06-13 in <a href="sources.html">sources</a>).</li>
+      <li>Base image tags (<code>python:3.11-slim</code>, <code>postgres:16</code>) age; newer versions
+      appear. Pin deliberately.</li>
+      <li>Docker Desktop licensing has terms that depend on company size — verify before commercial use.</li>
+    </ul>
+
+    <h2>Platform notes</h2>
+    <ul>
+      <li>Containers are a Linux-kernel technology. On Windows/macOS, Docker runs a lightweight Linux
+      VM under the hood — behavior is consistent but not literally "no VM" on those hosts.</li>
+      <li>File paths, line endings, and volume permissions can differ across host OSes.</li>
+    </ul>
+
+    <h2>Safety</h2>
+    <p>Default isolation is <em>not</em> a hardened security boundary. Don't run untrusted images
+    casually, don't bake secrets into images, and review official security guidance before exposing
+    anything beyond localhost.</p>
+
+    <p style="margin-top:2rem"><button data-complete="references/caveats.html">Mark this section complete</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>

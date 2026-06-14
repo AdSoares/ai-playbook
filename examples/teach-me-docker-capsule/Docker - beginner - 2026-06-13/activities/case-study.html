@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case study — Docker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="../index.html">teach-me</a>
+    <span class="crumb">Docker · Case study</span>
+  </header>
+  <main>
+    <h1>Case study — "Run our tool locally"</h1>
+    <p class="meta">Apply the whole capsule to a realistic scenario.</p>
+
+    <div class="card">
+      <strong>Scenario.</strong> A teammate shares a small internal web tool as a folder with
+      <code>app.py</code> and a <code>Dockerfile</code>. They also mention it needs a Postgres
+      database and a config value <code>APP_ENV=local</code>.
+    </div>
+
+    <h2>Your tasks</h2>
+    <ol>
+      <li>Start a Postgres 16 container with a named volume and a password. Write the command.</li>
+      <li>Build the tool's image as <code>internal-tool</code>. Write the command.</li>
+      <li>Run the tool, published on host port 8080, passing <code>APP_ENV=local</code>. Write the command.</li>
+      <li>The tool exits immediately. Which command do you run first to find out why?</li>
+      <li>State one thing that would persist after you remove both containers, and one thing that would not.</li>
+    </ol>
+
+    <h2>Reference solution (peek after trying)</h2>
+    <div class="card" style="font-family:monospace;white-space:pre-wrap">1) docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=secret -v pgdata:/var/lib/postgresql/data postgres:16
+2) docker build -t internal-tool .
+3) docker run -d -p 8080:80 -e APP_ENV=local internal-tool
+4) docker logs &lt;id&gt;
+5) Persists: the pgdata volume. Lost: anything written inside the tool container's filesystem (no volume).</div>
+
+    <p style="margin-top:2rem"><button data-complete="activities/case-study.html">Mark this section complete</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>

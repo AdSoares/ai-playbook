@@ -1,0 +1,33 @@
+{
+  "capsule_id": "docker-beginner-2026-06-13",
+  "completed_files": [
+    "diagnosis.html",
+    "prerequisites.html",
+    "objectives.html",
+    "roadmap.html",
+    "key-topics.html",
+    "lessons/lesson-01-overview.html",
+    "lessons/lesson-02-fundamentals.html",
+    "lessons/lesson-03-examples.html",
+    "lessons/lesson-04-common-mistakes.html",
+    "lessons/lesson-05-case-study.html",
+    "lessons/lesson-06-review.html",
+    "activities/exercises.html",
+    "activities/flashcards.html",
+    "assessment/assessment.html"
+  ],
+  "completed_activities": [
+    "flashcards",
+    "exercises",
+    "assessment-1"
+  ],
+  "total_progress_percent": 88,
+  "last_accessed_at": "2026-06-13T19:40:00-03:00",
+  "self_confidence": {
+    "image_vs_container": 5,
+    "run_and_ports": 4,
+    "build_dockerfile": 4,
+    "volumes_persistence": 4,
+    "common_mistakes": 3
+  }
+}

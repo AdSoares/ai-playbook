@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assessment — Docker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="../index.html">teach-me</a>
+    <span class="crumb">Docker · Assessment</span>
+  </header>
+  <main>
+    <h1>Assessment</h1>
+    <p class="note">The multiple-choice items below give instant feedback. For the open questions,
+    return to the chat and ask the <strong>teach-me</strong> skill to grade you — it reads your
+    history and avoids repeating questions.</p>
+
+    <h2>Multiple choice</h2>
+    <div class="quiz">
+      <div class="q">
+        <p><strong>1.</strong> What best describes the image↔container relationship?</p>
+        <span class="opt" data-correct="true">Image = immutable template; container = running instance created from it.</span>
+        <span class="opt" data-correct="false">Container = the file on disk; image = the process in memory.</span>
+        <span class="opt" data-correct="false">They are identical and interchangeable.</span>
+      </div>
+      <div class="q">
+        <p><strong>2.</strong> In <code>docker run -p 8080:80 nginx</code>, you open which URL?</p>
+        <span class="opt" data-correct="true">http://localhost:8080</span>
+        <span class="opt" data-correct="false">http://localhost:80</span>
+        <span class="opt" data-correct="false">http://nginx:8080</span>
+      </div>
+      <div class="q">
+        <p><strong>3.</strong> Why can container data disappear after <code>docker rm</code>?</p>
+        <span class="opt" data-correct="true">The writable layer is discarded unless a volume was mounted.</span>
+        <span class="opt" data-correct="false">Docker deletes images older than a day.</span>
+        <span class="opt" data-correct="false">Removing a container also clears the registry.</span>
+      </div>
+      <div class="q">
+        <p><strong>4.</strong> Why prefer <code>python:3.11-slim</code> over <code>:latest</code>?</p>
+        <span class="opt" data-correct="true">Pinned tags make builds reproducible; latest can change.</span>
+        <span class="opt" data-correct="false">slim images run with admin rights automatically.</span>
+        <span class="opt" data-correct="false">latest cannot be used in a Dockerfile.</span>
+      </div>
+      <div class="q">
+        <p><strong>5.</strong> Inside a container, a web server should bind to…</p>
+        <span class="opt" data-correct="true">0.0.0.0 — so forwarded host traffic is accepted.</span>
+        <span class="opt" data-correct="false">127.0.0.1 — for better performance.</span>
+      </div>
+    </div>
+
+    <h2>Open questions (graded by the skill)</h2>
+    <div class="card">
+      <ol>
+        <li>Explain to a non-technical person why a container "works the same everywhere". (Understand)</li>
+        <li>You need Postgres locally and must keep its data. Write the full <code>docker run</code> command and justify each flag. (Apply)</li>
+        <li>A teammate's container exits instantly. Walk through how you'd diagnose and fix it. (Analyze)</li>
+        <li>Give one scenario where Docker is the wrong tool for a beginner, and why. (Evaluate)</li>
+      </ol>
+    </div>
+
+    <p style="margin-top:2rem"><button data-complete="assessment/assessment.html">Mark assessment done</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>

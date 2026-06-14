@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 6 — Review — Docker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="../index.html">teach-me</a>
+    <span class="crumb">Docker · Lesson 6</span>
+  </header>
+  <main>
+    <h1>Lesson 6 — Review &amp; consolidation</h1>
+    <p class="meta">Estimated time: 30 min · Bloom focus: Understand, Evaluate</p>
+
+    <h2>1. What you'll learn</h2>
+    <p>Tie the five concepts together and self-check before the assessment.</p>
+
+    <h2>2. Why it matters</h2>
+    <p>Spaced, active review is when knowledge actually sticks (retrieval practice).</p>
+
+    <h2>3. Simple explanation — the whole picture in one paragraph</h2>
+    <p>A <strong>Dockerfile</strong> is a recipe; <code>docker build</code> turns it into a read-only
+    <strong>image</strong> (made of cached <strong>layers</strong>); <code>docker run</code> starts a
+    <strong>container</strong> (a running instance with a throwaway writable layer). You publish ports
+    with <code>-p</code>, persist data with <code>-v</code> volumes, and share images via a
+    <strong>registry</strong>. Containers share the host kernel, so they're light and fast.</p>
+
+    <h2>4. Concrete example — command cheat sheet</h2>
+    <div class="card" style="font-family:monospace;white-space:pre-wrap">build:  docker build -t name .
+run:    docker run -d -p 8080:80 -v data:/path -e KEY=val name
+list:   docker ps        docker images
+debug:  docker logs &lt;id&gt;  docker exec -it &lt;id&gt; sh
+clean:  docker stop &lt;id&gt;  docker rm &lt;id&gt;</div>
+
+    <h2>5. Correct technical view — self-explanation prompt</h2>
+    <p>Without looking, explain aloud: (a) image vs. container, (b) why data is ephemeral, (c) what
+    <code>-p 8080:80</code> does, (d) why <code>latest</code> is risky. If any is shaky, revisit that
+    lesson — that's metacognition working for you.</p>
+
+    <h2>6. Common mistakes recap</h2>
+    <p>latest reliance · no volume → lost data · missing <code>-p</code> · bloated images · baked-in secrets.</p>
+
+    <h2>7. Practical case</h2>
+    <p>Given "run Postgres locally and keep the data", you can now produce the full command from memory
+    (Lesson 3). Try it.</p>
+
+    <h2>8. Recall questions</h2>
+    <div class="quiz">
+      <div class="q">
+        <p>One image, run three times — how many containers?</p>
+        <span class="opt" data-correct="true">Three containers from one image.</span>
+        <span class="opt" data-correct="false">One container reused three times.</span>
+      </div>
+      <div class="q">
+        <p>Which flag persists data across container removal?</p>
+        <span class="opt" data-correct="true"><code>-v</code> (a volume mount).</span>
+        <span class="opt" data-correct="false"><code>-d</code> (detached mode).</span>
+      </div>
+      <div class="q">
+        <p>Containers are lightweight compared to VMs mainly because…</p>
+        <span class="opt" data-correct="true">they share the host kernel instead of bundling a full guest OS.</span>
+        <span class="opt" data-correct="false">they compress the application binary.</span>
+      </div>
+    </div>
+
+    <h2>9. Mini-exercise</h2>
+    <div class="card">Do the <a href="../activities/flashcards.html">flashcards</a> and the
+    <a href="../activities/exercises.html">exercises</a>, then take the
+    <a href="../assessment/assessment.html">assessment</a>.</div>
+
+    <h2>10. Summary</h2>
+    <p>You can explain containers, distinguish image/container/registry, run and build images, publish
+    ports, persist data, and dodge the classic mistakes. That is the beginner contract — verify it in
+    the assessment.</p>
+
+    <h2>11. Terms for the glossary</h2>
+    <p>(review all terms in the <a href="../glossary.html">glossary</a>.)</p>
+
+    <h2>12. Sources &amp; deepening</h2>
+    <p>See <a href="../references/deepening.html">deepening</a> for the next capsule.</p>
+
+    <p style="margin-top:2rem"><button data-complete="lessons/lesson-06-review.html">Mark this lesson complete</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>

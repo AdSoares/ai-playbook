@@ -1,0 +1,28 @@
+{
+  "capsule_id": "docker-beginner-2026-06-13",
+  "assessments": [
+    {
+      "assessment_number": 1,
+      "date": "2026-06-13",
+      "overall_score": 84,
+      "classification": "satisfactory",
+      "mastered_topics": [
+        "image-vs-container",
+        "ports",
+        "volumes",
+        "tags",
+        "concept"
+      ],
+      "gap_topics": [
+        "layer-cache",
+        "bind-address"
+      ],
+      "wrong_question_ids": [
+        "docker-beginner-q-006",
+        "docker-beginner-q-005"
+      ],
+      "feedback": "Strong on the core nouns and runtime flags. The two gaps are about the 'why' (cache ordering, bind address), not the 'what'. Both are covered in Lessons 4 and 5.",
+      "recommendation": "Re-read Lesson 4 (cache ordering) and Lesson 5 (0.0.0.0 vs 127.0.0.1), then advance to the intermediate capsule."
+    }
+  ]
+}

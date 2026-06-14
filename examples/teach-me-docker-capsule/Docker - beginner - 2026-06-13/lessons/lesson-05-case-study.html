@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 5 — Case study — Docker</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body data-capsule="docker-beginner-2026-06-13">
+  <header class="topbar">
+    <a class="home" href="../index.html">teach-me</a>
+    <span class="crumb">Docker · Lesson 5</span>
+  </header>
+  <main>
+    <h1>Lesson 5 — Case study: containerize a small web app</h1>
+    <p class="meta">Estimated time: 1h00 · Bloom focus: Apply, Create</p>
+
+    <h2>1. What you'll learn</h2>
+    <p>Put it together: take a tiny app from source to a running container you built yourself.</p>
+
+    <h2>2. Why it matters</h2>
+    <p>Building your own image is the moment Docker stops being abstract.</p>
+
+    <h2>3. Simple explanation — the app</h2>
+    <p>A minimal Python web server (<code>app.py</code>) that returns "Hello from a container":</p>
+    <div class="card" style="font-family:monospace;white-space:pre-wrap"># app.py
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+class H(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200); self.end_headers()
+        self.wfile.write(b"Hello from a container")
+
+HTTPServer(("0.0.0.0", 80), H).serve_forever()</div>
+
+    <h2>4. Concrete example — the Dockerfile</h2>
+    <div class="card" style="font-family:monospace;white-space:pre-wrap">FROM python:3.11-slim
+WORKDIR /app
+COPY app.py .
+EXPOSE 80
+CMD ["python", "app.py"]</div>
+    <p>Note <code>0.0.0.0</code> in the app: binding to localhost <em>inside</em> the container would
+    be unreachable from the host — a classic gotcha.</p>
+
+    <h2>5. Correct technical view — build &amp; run</h2>
+    <div class="card" style="font-family:monospace;white-space:pre-wrap">docker build -t hello-web .        # build image named hello-web from ./Dockerfile
+docker run -d -p 8080:80 hello-web # run it, publish to localhost:8080
+# open http://localhost:8080  -> "Hello from a container"
+docker logs &lt;id&gt;                   # see server output
+docker stop &lt;id&gt; && docker rm &lt;id&gt; # clean up</div>
+    <p>The <code>.</code> in <code>build</code> is the <strong>build context</strong> — the folder sent
+    to Docker. <code>EXPOSE</code> documents the port; <code>-p</code> actually publishes it.</p>
+
+    <h2>6. Common mistakes</h2>
+    <ul>
+      <li>Binding to <code>127.0.0.1</code> inside the container → unreachable from host. Use <code>0.0.0.0</code>.</li>
+      <li>Expecting <code>EXPOSE</code> alone to make the app reachable. You still need <code>-p</code>.</li>
+    </ul>
+
+    <h2>7. Practical case</h2>
+    <p>You hand a colleague the folder (app.py + Dockerfile). They run two commands and see the same
+    page — no Python setup instructions needed. That's the whole point of Lesson 1, realized.</p>
+
+    <h2>8. Recall questions</h2>
+    <div class="quiz">
+      <div class="q">
+        <p>Why bind the server to <code>0.0.0.0</code> instead of <code>127.0.0.1</code> inside a container?</p>
+        <span class="opt" data-correct="true">So it accepts connections forwarded from the host; 127.0.0.1 would only accept from inside the container.</span>
+        <span class="opt" data-correct="false">0.0.0.0 makes the server faster.</span>
+      </div>
+      <div class="q">
+        <p>What does the <code>.</code> mean in <code>docker build -t hello-web .</code>?</p>
+        <span class="opt" data-correct="true">The build context — the current folder sent to Docker (where the Dockerfile is).</span>
+        <span class="opt" data-correct="false">It tells Docker to hide the output.</span>
+      </div>
+      <div class="q">
+        <p>Does <code>EXPOSE 80</code> publish the port to your machine?</p>
+        <span class="opt" data-correct="true">No — it only documents the port; you still need <code>-p</code> to publish it.</span>
+        <span class="opt" data-correct="false">Yes — EXPOSE alone makes localhost reach the app.</span>
+      </div>
+    </div>
+
+    <h2>9. Mini-exercise</h2>
+    <div class="card">Change the response text, rebuild with a new tag (<code>hello-web:v2</code>), run
+    it on port 9090, and confirm both <code>v1</code> and <code>v2</code> can run at once on different
+    ports.</div>
+
+    <h2>10. Summary</h2>
+    <p>You wrote a Dockerfile, built an image with <code>docker build -t</code>, ran it with
+    <code>-p</code>, and verified it in the browser. Key gotchas: bind to <code>0.0.0.0</code>;
+    <code>EXPOSE</code> documents while <code>-p</code> publishes; the <code>.</code> is the build
+    context. You can now package a simple app end-to-end.</p>
+
+    <h2>11. Terms for the glossary</h2>
+    <p>build context, EXPOSE, CMD, 0.0.0.0 vs 127.0.0.1, image tagging.</p>
+
+    <h2>12. Sources &amp; deepening</h2>
+    <p>See <a href="../references/sources.html">sources</a> and <a href="../references/deepening.html">deepening</a> (Compose for multi-service).</p>
+
+    <p style="margin-top:2rem"><button data-complete="lessons/lesson-05-case-study.html">Mark this lesson complete</button></p>
+    <footer>Docker · beginner · docker-beginner-2026-06-13</footer>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>
