@@ -79,9 +79,19 @@ or an architecture/components view. (Mermaid only if bundled locally.)
 
 ## 7. Local operation
 Default = **no install**: open `index.html` in a browser. Tech: HTML + CSS + vanilla JS +
-LocalStorage for progress. Optional install (Python, Docker, Git, Node, a DB…) only when it adds to
-learning — and then state: required or optional? why it helps? estimated time? what it enables? any
-no-install alternative?
+LocalStorage for progress. The bundled `app.js` auto-injects a **light/dark theme toggle** into
+every page's top bar (defaults to the OS preference, persists the choice) — don't add your own;
+just keep the `<header class="topbar">` and the `app.js`/`style.css` includes intact, and use the
+theme CSS variables instead of hardcoded colors. Optional install (Python, Docker, Git, Node, a DB…)
+only when it adds to learning — and then state: required or optional? why it helps? estimated time?
+what it enables? any no-install alternative?
+
+## 9. Language
+Generate **all** capsule content in the language the learner used to request the training (lesson
+text, examples, exercises, flashcards, glossary, caveats, assessment). Also translate the static UI
+labels you fill into the templates — nav crumbs, section headings, button text like "Mark this
+section complete", the index "Study path"/"Reference"/"Goal"/"Progress" labels — into that language.
+Keep code, CLI commands, and proper nouns unchanged. Record source languages in `sources.html`.
 
 ## 8. Roadmap (time- and dependency-ordered)
 ```

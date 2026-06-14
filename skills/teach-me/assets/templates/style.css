@@ -1,10 +1,19 @@
-/* teach-me capsule — shared styles. Self-contained, no external fonts or assets. */
-:root {
-  --bg: #0f1115; --panel: #171a21; --ink: #e7e9ee; --muted: #9aa3b2;
-  --accent: #5b9cff; --good: #43c59e; --warn: #f2c94c; --bad: #ef6f6c;
-  --line: #262b36; --radius: 10px;
+/* teach-me capsule — shared styles. Self-contained, no external fonts or assets.
+ * Themes: dark (default) and light, switched via [data-theme] on <html> by app.js. */
+:root, :root[data-theme="dark"] {
+  --bg: #0f1115; --panel: #171a21; --panel-2: #20283a; --track: #11151d;
+  --ink: #e7e9ee; --muted: #9aa3b2; --accent: #5b9cff; --accent-ink: #08101f;
+  --good: #43c59e; --good-bg: #14241f; --warn: #f2c94c; --bad: #ef6f6c; --bad-bg: #2a1818;
+  --line: #262b36; --note-bg: #1c1d18; --radius: 10px;
+}
+:root[data-theme="light"] {
+  --bg: #f7f8fa; --panel: #ffffff; --panel-2: #eef1f6; --track: #e8ebf0;
+  --ink: #1c2330; --muted: #5b6472; --accent: #2563eb; --accent-ink: #ffffff;
+  --good: #0f9d72; --good-bg: #e6f7f0; --warn: #b7791f; --bad: #d64545; --bad-bg: #fdecec;
+  --line: #e2e6ec; --note-bg: #fdf7e3;
 }
 * { box-sizing: border-box; }
+html { color-scheme: dark light; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
   font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -17,13 +26,19 @@ header.topbar {
 }
 header.topbar .home { font-weight: 600; }
 header.topbar .crumb { color: var(--muted); }
+.theme-toggle {
+  margin-left: auto; font: inherit; cursor: pointer; line-height: 1;
+  border: 1px solid var(--line); background: var(--panel-2); color: var(--ink);
+  padding: .35rem .6rem; border-radius: 8px;
+}
+.theme-toggle:hover { border-color: var(--accent); }
 main { max-width: 860px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
 h1, h2, h3 { line-height: 1.25; }
 h1 { font-size: 1.7rem; margin: .2rem 0 1rem; }
 h2 { font-size: 1.25rem; margin-top: 2rem; border-bottom: 1px solid var(--line); padding-bottom: .3rem; }
 .badge {
   display: inline-block; padding: .12rem .55rem; border-radius: 999px; font-size: .78rem;
-  background: #1d2430; color: var(--muted); border: 1px solid var(--line);
+  background: var(--panel-2); color: var(--muted); border: 1px solid var(--line);
 }
 .meta { color: var(--muted); font-size: .9rem; }
 .card {
@@ -37,18 +52,18 @@ ul.filelist { list-style: none; padding: 0; }
 ul.filelist li { padding: .35rem 0; border-bottom: 1px solid var(--line); }
 ul.filelist .check { color: var(--good); margin-right: .4rem; }
 button {
-  font: inherit; cursor: pointer; border: 1px solid var(--line); background: #20283a;
+  font: inherit; cursor: pointer; border: 1px solid var(--line); background: var(--panel-2);
   color: var(--ink); padding: .45rem .8rem; border-radius: 8px;
 }
 button:hover { border-color: var(--accent); }
-button.primary { background: var(--accent); color: #08101f; border-color: transparent; font-weight: 600; }
-.progress { background: #11151d; border: 1px solid var(--line); border-radius: 999px; height: 14px; overflow: hidden; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; font-weight: 600; }
+.progress { background: var(--track); border: 1px solid var(--line); border-radius: 999px; height: 14px; overflow: hidden; }
 .progress > span { display: block; height: 100%; width: 0; background: var(--good); transition: width .3s; }
-.note { border-left: 3px solid var(--warn); padding: .5rem .8rem; background: #1c1d18; border-radius: 0 8px 8px 0; }
+.note { border-left: 3px solid var(--warn); padding: .5rem .8rem; background: var(--note-bg); border-radius: 0 8px 8px 0; }
 .quiz .q { margin: 1rem 0; }
 .quiz .opt { display: block; margin: .3rem 0; padding: .5rem .7rem; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; }
-.quiz .opt.correct { border-color: var(--good); background: #14241f; }
-.quiz .opt.wrong { border-color: var(--bad); background: #2a1818; }
+.quiz .opt.correct { border-color: var(--good); background: var(--good-bg); }
+.quiz .opt.wrong { border-color: var(--bad); background: var(--bad-bg); }
 .flashcards { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 .flashcard { perspective: 800px; height: 150px; }
 .flashcard .inner { position: relative; width: 100%; height: 100%; transition: transform .5s; transform-style: preserve-3d; }
@@ -58,5 +73,5 @@ button.primary { background: var(--accent); color: #08101f; border-color: transp
   justify-content: center; text-align: center; padding: 1rem; border: 1px solid var(--line);
   border-radius: var(--radius); background: var(--panel);
 }
-.flashcard .back { transform: rotateY(180deg); background: #14241f; }
+.flashcard .back { transform: rotateY(180deg); background: var(--good-bg); }
 footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1rem; }

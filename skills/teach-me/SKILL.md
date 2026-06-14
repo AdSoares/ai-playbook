@@ -39,8 +39,13 @@ debates), not becoming a professional expert. Always make this explicit.
 5. **Respect copyright.** Do not reproduce protected/paid content in full — cite, summarize, or link.
 6. **Self-sufficient content.** The capsule must teach on its own; external content is a complement,
    never the sole dependency, and its time counts inside the budget.
-7. **Learner's language.** Generate capsule content in the user's language (infer, or ask once).
-   This skill's own files are EN-US; the generated capsule is localized.
+7. **Generate in the language the learner used to request the training.** Infer it from their
+   message (e.g. a request in Portuguese → the whole capsule in Portuguese; in English → English).
+   Only ask if it is genuinely ambiguous. This applies to **everything** the learner reads: lesson
+   text, examples, exercises, flashcards, glossary, sources notes, assessment, AND the visible UI
+   labels you fill into the templates (nav, buttons, section titles). Pass the language to
+   `new_capsule.py` via `--lang`. This skill's own files stay EN-US; only the generated capsule is
+   localized. Keep code, commands, and proper nouns in their original form.
 
 ## Workflow
 
@@ -89,7 +94,9 @@ ready → generated → studying → assessment-requested → assessing → asse
 ## Bundled assets
 
 - `assets/templates/` — self-contained HTML/CSS/JS (open via `file://`, no network needed).
-  `app.js` handles LocalStorage progress, interactive quizzes, and flashcards.
+  `app.js` handles a light/dark theme toggle (auto-injected into the top bar of every page,
+  respects the OS preference, choice persisted in LocalStorage), progress, quizzes, and flashcards.
+  `style.css` ships both themes via `[data-theme]` — keep using its CSS variables, never hardcode colors.
 - `assets/schemas/` — JSON Schema for `manifest`, `progress`, `question-bank`, `results`.
 - `scripts/new_capsule.py` — scaffolds a capsule; also exposes `dedupe_questions(bank, history)`
   to pick fresh questions for re-assessments.
