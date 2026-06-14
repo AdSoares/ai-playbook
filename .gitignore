@@ -31,3 +31,7 @@ Thumbs.db
 # Eval outputs
 evals/**/results/
 evals/**/*.out.json
+
+# Local scratch — not committed (keep the folder via its README)
+/local/*
+!/local/README.md
