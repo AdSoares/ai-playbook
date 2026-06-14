@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roadmap — {{subject}}</title>
+  <link rel="stylesheet" href="{{root}}style.css" />
+</head>
+<body data-capsule="{{capsule_id}}">
+  <header class="topbar">
+    <a class="home" href="{{root}}index.html">teach-me</a>
+    <span class="crumb">{{subject}} · Roadmap</span>
+  </header>
+  <main>
+    <h1>Roadmap</h1>
+    <p class="meta">Total estimated time: {{estimated_time}} · Budget ≤ {{hours}}h. Ordered by conceptual dependency.</p>
+
+    <table>
+      <thead>
+        <tr><th>#</th><th>Topic</th><th>File</th><th>Time</th><th>Type</th><th>Required</th></tr>
+      </thead>
+      <tbody>
+        <!-- One row per step. type: reading | video | audio | exercise | assessment -->
+        {{roadmap_rows}}
+      </tbody>
+    </table>
+
+    <p class="note">Keep the sum of all rows within the {{hours}}h budget. Trim "useful" topics first.</p>
+
+    <p style="margin-top:2rem"><button data-complete="roadmap.html">Mark this section complete</button></p>
+    <footer>{{subject}} · {{level}} · {{capsule_id}}</footer>
+  </main>
+  <script src="{{root}}app.js"></script>
+</body>
+</html>

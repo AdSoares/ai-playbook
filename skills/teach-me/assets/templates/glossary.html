@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glossary — {{subject}}</title>
+  <link rel="stylesheet" href="{{root}}style.css" />
+</head>
+<body data-capsule="{{capsule_id}}">
+  <header class="topbar">
+    <a class="home" href="{{root}}index.html">teach-me</a>
+    <span class="crumb">{{subject}} · Glossary</span>
+  </header>
+  <main>
+    <h1>Glossary</h1>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Short explanation</th><th>Technical explanation</th><th>Example</th><th>Where it appears</th><th>Level</th></tr>
+      </thead>
+      <tbody>
+        <!-- One row per term -->
+        {{glossary_rows}}
+      </tbody>
+    </table>
+    <footer>{{subject}} · {{level}} · {{capsule_id}}</footer>
+  </main>
+  <script src="{{root}}app.js"></script>
+</body>
+</html>

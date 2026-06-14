@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AdSoares/ai-playbook/skills/teach-me/manifest.schema.json",
+  "title": "Capsule Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["capsule_id", "subject", "level", "language", "created_at", "max_duration_minutes", "status"],
+  "properties": {
+    "capsule_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "subject": { "type": "string", "minLength": 1 },
+    "level": { "enum": ["introductory", "beginner", "intermediate", "advanced", "expert"] },
+    "language": { "type": "string", "description": "BCP-47 tag, e.g. pt-BR or en-US" },
+    "created_at": { "type": "string", "description": "ISO date YYYY-MM-DD" },
+    "max_duration_minutes": { "type": "integer", "minimum": 1, "maximum": 600 },
+    "estimated_duration_minutes": { "type": "integer", "minimum": 0, "maximum": 600 },
+    "user_goal": { "type": "string" },
+    "status": {
+      "enum": ["new", "analyzing", "awaiting-level", "awaiting-diagnosis", "ready", "generated",
+               "studying", "assessment-requested", "assessing", "assessed", "reinforcement", "next-level"]
+    },
+    "files": { "type": "array", "items": { "type": "string" } }
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sources — {{subject}}</title>
+  <link rel="stylesheet" href="{{root}}style.css" />
+</head>
+<body data-capsule="{{capsule_id}}">
+  <header class="topbar">
+    <a class="home" href="{{root}}index.html">teach-me</a>
+    <span class="crumb">{{subject}} · Sources</span>
+  </header>
+  <main>
+    <h1>Sources</h1>
+    <p class="meta">Every factual claim in this capsule is backed by a source below (references/sources-and-safety.md).</p>
+    <table>
+      <thead>
+        <tr><th>Title</th><th>Author / institution</th><th>Type</th><th>Language</th><th>License</th><th>Time</th><th>Accessed</th><th>Why used</th></tr>
+      </thead>
+      <tbody>
+        <!-- One row per source. Link the title. -->
+        {{source_rows}}
+      </tbody>
+    </table>
+    <footer>{{subject}} · {{level}} · {{capsule_id}}</footer>
+  </main>
+  <script src="{{root}}app.js"></script>
+</body>
+</html>

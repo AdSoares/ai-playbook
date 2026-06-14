@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AdSoares/ai-playbook/skills/teach-me/results.schema.json",
+  "title": "Assessment Results",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["capsule_id", "assessments"],
+  "properties": {
+    "capsule_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assessment_number", "date", "overall_score", "classification"],
+        "properties": {
+          "assessment_number": { "type": "integer", "minimum": 1 },
+          "date": { "type": "string", "description": "ISO date YYYY-MM-DD" },
+          "overall_score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "classification": { "enum": ["excellent", "satisfactory", "partial", "insufficient", "critical_gap"] },
+          "mastered_topics": { "type": "array", "items": { "type": "string" } },
+          "gap_topics": { "type": "array", "items": { "type": "string" } },
+          "wrong_question_ids": { "type": "array", "items": { "type": "string" } },
+          "feedback": { "type": "string" },
+          "recommendation": { "type": "string" }
+        }
+      }
+    }
+  }
+}

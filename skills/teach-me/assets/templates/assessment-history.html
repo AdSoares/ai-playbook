@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assessment history — {{subject}}</title>
+  <link rel="stylesheet" href="{{root}}style.css" />
+</head>
+<body data-capsule="{{capsule_id}}">
+  <header class="topbar">
+    <a class="home" href="{{root}}index.html">teach-me</a>
+    <span class="crumb">{{subject}} · History</span>
+  </header>
+  <main>
+    <h1>Assessment history</h1>
+    <p class="meta">Updated after each assessment (mirrors assessment/results.json).</p>
+
+    <!-- Prepend one .card per assessment (most recent first). -->
+    {{history_entries}}
+
+    <footer>{{subject}} · {{level}} · {{capsule_id}}</footer>
+  </main>
+  <script src="{{root}}app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AdSoares/ai-playbook/skills/teach-me/question-bank.schema.json",
+  "title": "Question Bank",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["question_id", "topic", "level", "bloom", "format", "question", "answer_key", "is_fundamental"],
+    "properties": {
+      "question_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "topic": { "type": "string", "minLength": 1 },
+      "level": { "enum": ["introductory", "beginner", "intermediate", "advanced", "expert"] },
+      "bloom": { "enum": ["remember", "understand", "apply", "analyze", "evaluate", "create"] },
+      "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 },
+      "is_fundamental": { "type": "boolean" },
+      "format": {
+        "enum": ["multiple_choice", "true_false_justified", "short_answer",
+                 "plain_explanation", "case_study", "error_diagnosis", "comparison", "mini_project"]
+      },
+      "question": { "type": "string", "minLength": 1 },
+      "options": { "type": "array", "items": { "type": "string" } },
+      "answer_key": { "type": "string", "minLength": 1 },
+      "asked_count": { "type": "integer", "minimum": 0 },
+      "last_asked_at": { "type": ["string", "null"] },
+      "last_result": { "enum": ["correct", "incorrect", "partial", null] }
+    }
+  }
+}

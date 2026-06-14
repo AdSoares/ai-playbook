@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flashcards — {{subject}}</title>
+  <link rel="stylesheet" href="{{root}}style.css" />
+</head>
+<body data-capsule="{{capsule_id}}">
+  <header class="topbar">
+    <a class="home" href="{{root}}index.html">teach-me</a>
+    <span class="crumb">{{subject}} · Flashcards</span>
+  </header>
+  <main>
+    <h1>Flashcards</h1>
+    <p class="meta">Click a card to flip. Use these for active recall (references/pedagogy.md).</p>
+
+    <div class="flashcards">
+      <!-- One .flashcard per term: front = prompt, back = answer. -->
+      <div class="flashcard"><div class="inner">
+        <div class="face front">{{card1_front}}</div>
+        <div class="face back">{{card1_back}}</div>
+      </div></div>
+      {{more_cards}}
+    </div>
+
+    <p style="margin-top:2rem"><button data-complete="activities/flashcards.html">Mark flashcards done</button></p>
+    <footer>{{subject}} · {{level}} · {{capsule_id}}</footer>
+  </main>
+  <script src="{{root}}app.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{lesson_title}} — {{subject}}</title>
+  <link rel="stylesheet" href="{{root}}style.css" />
+</head>
+<body data-capsule="{{capsule_id}}">
+  <header class="topbar">
+    <a class="home" href="{{root}}index.html">teach-me</a>
+    <span class="crumb">{{subject}} · Lesson</span>
+  </header>
+  <main>
+    <!-- Lesson model (references/capsule-blueprint.md §5). Every lesson MUST include at least:
+         1 worked example, 1 analogy when useful, 3 recall questions, 1 mini-exercise,
+         a common-mistakes section, and a closing summary (references/pedagogy.md). -->
+    <h1>{{lesson_title}}</h1>
+    <p class="meta">Estimated time: {{lesson_time}} · Bloom focus: {{bloom}}</p>
+
+    <h2>1. What you'll learn</h2>
+    {{learn}}
+    <h2>2. Why it matters</h2>
+    {{why}}
+    <h2>3. Simple explanation</h2>
+    {{simple}}
+    <h2>4. Concrete example</h2>
+    {{example}}
+    <h2>5. Correct technical view</h2>
+    {{technical}}
+    <h2>6. Common mistakes</h2>
+    {{mistakes}}
+    <h2>7. Practical case</h2>
+    {{case}}
+
+    <h2>8. Recall questions</h2>
+    <div class="quiz">
+      <div class="q">
+        <p>{{recall_q1}}</p>
+        <span class="opt" data-correct="true">{{recall_q1_correct}}</span>
+        <span class="opt" data-correct="false">{{recall_q1_distractor}}</span>
+      </div>
+      <!-- add at least 3 recall questions -->
+    </div>
+
+    <h2>9. Mini-exercise</h2>
+    <div class="card">{{exercise}}</div>
+
+    <h2>10. Summary</h2>
+    {{summary}}
+
+    <h2>11. Terms for the glossary</h2>
+    {{terms}}
+
+    <h2>12. Sources &amp; deepening</h2>
+    {{sources}}
+
+    <p style="margin-top:2rem"><button data-complete="{{relpath}}">Mark this lesson complete</button></p>
+    <footer>{{subject}} · {{level}} · {{capsule_id}}</footer>
+  </main>
+  <script src="{{root}}app.js"></script>
+</body>
+</html>

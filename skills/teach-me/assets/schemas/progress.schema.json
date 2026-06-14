@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AdSoares/ai-playbook/skills/teach-me/progress.schema.json",
+  "title": "Capsule Progress",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["capsule_id", "total_progress_percent"],
+  "properties": {
+    "capsule_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "completed_files": { "type": "array", "items": { "type": "string" } },
+    "completed_activities": { "type": "array", "items": { "type": "string" } },
+    "total_progress_percent": { "type": "integer", "minimum": 0, "maximum": 100 },
+    "last_accessed_at": { "type": ["string", "null"], "description": "ISO 8601 datetime" },
+    "self_confidence": {
+      "type": "object",
+      "description": "Per-topic self-rated confidence (1-5).",
+      "additionalProperties": { "type": "integer", "minimum": 1, "maximum": 5 }
+    }
+  }
+}

@@ -36,3 +36,4 @@ A concrete usage case.
 | Skill | When to use |
 |---|---|
 | [`changelog-writer/`](changelog-writer/) | Generate CHANGELOG entries from commits |
+| [`teach-me/`](teach-me/) | Build a self-contained, time-boxed study capsule to learn any public subject |

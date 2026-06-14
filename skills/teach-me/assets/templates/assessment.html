@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assessment — {{subject}}</title>
+  <link rel="stylesheet" href="{{root}}style.css" />
+</head>
+<body data-capsule="{{capsule_id}}">
+  <header class="topbar">
+    <a class="home" href="{{root}}index.html">teach-me</a>
+    <span class="crumb">{{subject}} · Assessment</span>
+  </header>
+  <main>
+    <h1>Assessment</h1>
+    <p class="note">For grading of open answers, return to the chat and ask the <strong>teach-me</strong>
+      skill to assess you — it reads your history and avoids repeating questions
+      (references/assessment.md). The quiz below gives instant feedback on objective items.</p>
+
+    <div class="quiz">
+      <!-- One .q block per multiple-choice item; mark the right .opt with data-correct="true". -->
+      <div class="q">
+        <p><strong>1.</strong> {{q1}}</p>
+        <span class="opt" data-correct="true">{{q1_correct}}</span>
+        <span class="opt" data-correct="false">{{q1_distractor_a}}</span>
+        <span class="opt" data-correct="false">{{q1_distractor_b}}</span>
+      </div>
+      {{more_questions}}
+    </div>
+
+    <h2>Open questions</h2>
+    <div class="card">{{open_questions}}</div>
+
+    <p style="margin-top:2rem"><button data-complete="assessment/assessment.html">Mark assessment done</button></p>
+    <footer>{{subject}} · {{level}} · {{capsule_id}}</footer>
+  </main>
+  <script src="{{root}}app.js"></script>
+</body>
+</html>
